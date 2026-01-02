@@ -16,13 +16,13 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-charcoal-dark relative overflow-hidden">
+    <footer id="contact" className="bg-charcoal-dark relative overflow-hidden pt-20 pb-12">
       {/* Decorative glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-40 bg-primary/5 blur-[100px]" />
 
-      <div className="container relative z-10 px-4 sm:px-6 py-6 md:py-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
+      <div className="container relative z-10 px-4 sm:px-6 py-12 md:py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
