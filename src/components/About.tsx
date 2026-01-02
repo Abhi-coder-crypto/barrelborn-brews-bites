@@ -23,7 +23,7 @@ const features = [
     icon: Users,
     title: "Private Events",
     description: "Exclusive spaces for gatherings",
-    image: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&q=80&w=400"
+    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=600"
   },
 ];
 
@@ -70,45 +70,47 @@ const About = () => {
           </div>
 
           {/* Text Content */}
-          <div className="space-y-6">
-            <div className="space-y-2">
+          <div className="flex flex-col justify-center space-y-8">
+            <div className="space-y-3">
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs block">Our Story</span>
-              <span className="text-primary/60 font-medium tracking-[0.2em] uppercase text-[9px] block">Established 2021</span>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
+              <span className="text-primary/60 font-medium tracking-[0.2em] uppercase text-[10px] block">Established 2021</span>
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground leading-[1.1]">
                 Crafting <span className="text-gradient-gold">Unforgettable</span> Moments
               </h2>
             </div>
             
-            <p className="text-lg text-foreground/90 leading-relaxed font-light italic">
-              "Every barrel has a story. At Barrelborn, we help you write yours over exceptional brews and world-class cuisine."
-            </p>
-            
-            <div className="space-y-4 text-muted-foreground leading-relaxed text-sm">
-              <p>
-                Nestled in the vibrant heart of Thane, <span className="text-primary font-medium">Barrelborn</span> is more than just a restaurant – it's a celebration of craft, community, and culinary artistry.
+            <div className="space-y-6">
+              <p className="text-lg sm:text-xl text-foreground/90 leading-relaxed font-light italic border-l-2 border-primary/30 pl-6">
+                "Every barrel has a story. At Barrelborn, we help you write yours over exceptional brews and world-class cuisine."
               </p>
+              
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  Nestled in the vibrant heart of Thane, <span className="text-primary font-medium">Barrelborn</span> is more than just a restaurant – it's a celebration of craft, community, and culinary artistry.
+                </p>
+              </div>
             </div>
 
-            <div className="pt-2">
-              <div className="grid grid-cols-2 gap-3">
+            <div className="pt-4">
+              <div className="grid grid-cols-2 gap-4">
                 {features.map((feature) => (
-                  <div key={feature.title} className="relative group overflow-hidden rounded-xl border border-border/30 hover-elevate transition-all duration-500 h-24 sm:h-28">
+                  <div key={feature.title} className="relative group overflow-hidden rounded-2xl border border-border/20 hover-elevate transition-all duration-500 h-28 sm:h-32">
                     {/* Background Image */}
                     <img 
                       src={feature.image} 
                       alt={feature.title} 
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     {/* Overlay - Darker for visibility */}
-                    <div className="absolute inset-0 bg-black/75 group-hover:bg-black/65 transition-colors duration-300" />
+                    <div className="absolute inset-0 bg-black/80 group-hover:bg-black/70 transition-colors duration-300" />
                     
                     {/* Content */}
-                    <div className="relative z-10 p-3 h-full flex flex-col justify-center items-center text-center">
-                      <div className="mb-1.5 p-1 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
-                        <feature.icon className="w-3 h-3 text-primary" />
+                    <div className="relative z-10 p-4 h-full flex flex-col justify-center items-center text-center">
+                      <div className="mb-2 p-1.5 bg-primary/20 rounded-xl group-hover:bg-primary/30 transition-colors">
+                        <feature.icon className="w-4 h-4 text-primary" />
                       </div>
-                      <h4 className="font-display text-foreground text-[9px] font-bold uppercase tracking-wider">{feature.title}</h4>
-                      <p className="text-[8px] text-muted-foreground mt-0.5 leading-tight">{feature.description}</p>
+                      <h4 className="font-display text-foreground text-[10px] font-bold uppercase tracking-[0.2em]">{feature.title}</h4>
+                      <p className="text-[9px] text-muted-foreground mt-1 leading-tight font-medium">{feature.description}</p>
                     </div>
                   </div>
                 ))}
