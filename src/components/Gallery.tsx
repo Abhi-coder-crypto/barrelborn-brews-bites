@@ -47,7 +47,7 @@ const Gallery = () => {
 
         <div className="text-center mt-12">
           <a
-            href="https://www.instagram.com/barrelborn_/"
+            href="https://www.instagram.com/barrelborn_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 px-8 lg:px-9 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full transition-all duration-300 font-medium"
