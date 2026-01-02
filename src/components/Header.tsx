@@ -45,12 +45,14 @@ const Header = () => {
             onClick={() => handleNavClick("#home")}
             className="flex items-center gap-3 group"
           >
-            <div className={`rounded-full border-2 border-primary flex items-center justify-center transition-all duration-300 group-hover:border-gold-light group-hover:shadow-gold ${
-              isScrolled ? "w-10 h-10" : "w-12 h-12"
+            <div className={`relative flex items-center justify-center transition-all duration-300 ${
+              isScrolled ? "w-12 h-12" : "w-16 h-16"
             }`}>
-              <span className={`font-display text-primary font-bold transition-all duration-300 group-hover:text-gold-light ${
-                isScrolled ? "text-lg" : "text-xl"
-              }`}>B</span>
+              <img 
+                src="/assets/logo.png" 
+                alt="BarrelBorn Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="hidden sm:block">
               <h1 className={`font-display text-foreground tracking-wide transition-all duration-300 ${
