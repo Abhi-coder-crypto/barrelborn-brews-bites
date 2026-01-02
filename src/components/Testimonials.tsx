@@ -21,6 +21,29 @@ const testimonials = [
   },
 ];
 
+import { Star, Quote } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Rahul Sharma",
+    role: "Food Enthusiast",
+    content: "The craft beers here are absolutely phenomenal! Each brew has its own unique character. The ambiance perfectly complements the experience. A must-visit in Thane!",
+    rating: 5,
+  },
+  {
+    name: "Priya Mehta",
+    role: "Regular Patron",
+    content: "Barrelborn has become my go-to spot for weekend dinners. The cocktails are innovative, and their butter garlic prawns are to die for. The staff is incredibly warm and welcoming.",
+    rating: 5,
+  },
+  {
+    name: "Amit Desai",
+    role: "Beer Connoisseur",
+    content: "As someone who appreciates good craft beer, I'm impressed by their selection. The barrel-aged stout is exceptional. Great food pairings and knowledgeable bartenders!",
+    rating: 5,
+  },
+];
+
 const Testimonials = () => {
   return (
     <section id="testimonials" className="section-padding bg-charcoal relative overflow-hidden">
@@ -41,70 +64,56 @@ const Testimonials = () => {
           <div className="section-divider" />
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.name}
-              className="group relative p-8 lg:p-9 bg-card/70 rounded-2xl border border-border/40 hover:border-primary/30 card-hover backdrop-blur-sm"
-            >
-              {/* Quote icon */}
-              <div className="absolute top-6 right-6 lg:top-8 lg:right-8 text-primary/15 group-hover:text-primary/30 transition-colors duration-500">
-                <Quote className="w-8 h-8 lg:w-10 lg:h-10" />
-              </div>
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+          <div className="lg:w-1/2">
+             <h3 className="text-3xl font-display mb-6 text-foreground">A Neighbourhood Favourite</h3>
+             <p className="text-muted-foreground text-lg mb-8">
+               We take pride in creating a space where great conversations meet exceptional brews. Read what our community thinks about their experience at Barrelborn.
+             </p>
+          </div>
 
-              {/* Rating */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className="w-4 h-4 lg:w-5 lg:h-5 fill-primary text-primary transition-transform duration-300 group-hover:scale-110" 
-                    style={{ transitionDelay: `${i * 50}ms` }}
-                  />
-                ))}
-              </div>
-
-              {/* Content */}
-              <p className="text-muted-foreground leading-relaxed mb-8 text-base lg:text-lg font-light italic">
-                "{testimonial.content}"
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/10 transition-all duration-300">
-                  <span className="font-display text-lg lg:text-xl text-primary">
-                    {testimonial.name.charAt(0)}
-                  </span>
+          <div className="lg:w-1/2 w-full overflow-hidden relative h-[400px]">
+            <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-charcoal to-transparent z-10" />
+            <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-charcoal to-transparent z-10" />
+            
+            <div className="animate-marquee-vertical flex flex-col gap-6">
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <div
+                  key={`${testimonial.name}-${index}`}
+                  className="p-8 bg-card/70 rounded-2xl border border-border/40 backdrop-blur-sm"
+                >
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed mb-6 italic">
+                    "{testimonial.content}"
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary font-display">{testimonial.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-foreground text-sm">{testimonial.name}</h4>
+                      <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-medium text-foreground text-base lg:text-lg">{testimonial.name}</h4>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Google Rating CTA */}
-        <div className="text-center mt-16 lg:mt-20">
-          <div className="inline-flex flex-col items-center p-8 lg:p-10 bg-card/50 rounded-2xl border border-border/40 backdrop-blur-sm">
-            <p className="text-muted-foreground mb-5 text-base lg:text-lg">Love your experience?</p>
-            <a
-              href="#"
-              className="group flex items-center gap-4 px-7 py-3.5 bg-primary/10 hover:bg-primary/20 rounded-full transition-all duration-300"
-            >
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className="w-5 h-5 fill-primary text-primary transition-transform duration-300 group-hover:scale-110"
-                    style={{ transitionDelay: `${i * 50}ms` }}
-                  />
-                ))}
-              </div>
-              <span className="text-primary font-medium">Rate us on Google</span>
-            </a>
-          </div>
+        <div className="text-center mt-16">
+          <a
+            href="#"
+            className="group inline-flex items-center gap-4 px-7 py-3.5 bg-primary/10 hover:bg-primary/20 rounded-full transition-all duration-300"
+          >
+            <Star className="w-5 h-5 fill-primary text-primary" />
+            <span className="text-primary font-medium">Rate us on Google</span>
+          </a>
         </div>
       </div>
     </section>
