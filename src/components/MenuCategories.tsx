@@ -1,40 +1,40 @@
-import { Beer, Wine, Utensils, GlassWater, IceCream, Martini } from "lucide-react";
+import { Beer, Wine, Utensils, GlassWater, IceCream, Martini, ArrowRight } from "lucide-react";
 
 const categories = [
   {
     icon: Utensils,
     name: "Food",
-    description: "Gourmet dishes & bar bites",
+    description: "Gourmet dishes & bar bites crafted by our chefs",
     items: "25+ dishes",
   },
   {
     icon: Beer,
     name: "Crafted Beer",
-    description: "Exclusive brews on tap",
+    description: "Exclusive brews on tap, barrel-aged to perfection",
     items: "15+ varieties",
   },
   {
     icon: Martini,
     name: "Cocktails",
-    description: "Signature mixed drinks",
+    description: "Signature mixed drinks with premium spirits",
     items: "20+ creations",
   },
   {
     icon: Wine,
     name: "Bar",
-    description: "Premium spirits & wines",
+    description: "Premium spirits, wines & imported selections",
     items: "40+ options",
   },
   {
     icon: GlassWater,
     name: "Mocktails",
-    description: "Refreshing non-alcoholic",
+    description: "Refreshing non-alcoholic crafted beverages",
     items: "12+ flavors",
   },
   {
     icon: IceCream,
     name: "Desserts",
-    description: "Sweet endings",
+    description: "Sweet endings to complete your experience",
     items: "10+ treats",
   },
 ];
@@ -43,66 +43,62 @@ const MenuCategories = () => {
   return (
     <section id="menu" className="section-padding bg-background relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-pattern opacity-50" />
+      <div className="absolute inset-0 bg-pattern opacity-40" />
       
       {/* Glow effects */}
-      <div className="absolute top-1/4 left-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px]" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[150px]" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[180px]" />
 
-      <div className="container relative z-10 px-4">
+      <div className="container relative z-10 px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary text-sm tracking-[0.3em] uppercase">What We Offer</span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-6">
-            Our Menu
-          </h2>
-          <div className="w-24 h-0.5 bg-primary mx-auto mb-6" />
-          <p className="max-w-2xl mx-auto text-muted-foreground">
+        <div className="section-header">
+          <span className="section-label">What We Offer</span>
+          <h2 className="section-title">Our Menu</h2>
+          <div className="section-divider" />
+          <p className="section-description">
             From barrel-aged craft beers to artisanal cocktails and gourmet cuisine, explore our carefully curated offerings
           </p>
         </div>
 
         {/* Categories Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
           {categories.map((category, index) => (
             <div
               key={category.name}
-              className="group relative p-8 bg-card rounded-2xl border border-border/50 hover:border-primary/50 transition-all duration-500 cursor-pointer overflow-hidden"
+              className="group relative p-8 lg:p-9 bg-card/80 rounded-2xl border border-border/40 hover:border-primary/40 card-hover cursor-pointer overflow-hidden backdrop-blur-sm"
             >
               {/* Hover gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="relative z-10">
                 {/* Icon */}
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/15 transition-all duration-400">
                   <category.icon className="w-8 h-8 text-primary" />
                 </div>
 
                 {/* Content */}
-                <h3 className="font-display text-2xl text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {category.name}
                 </h3>
-                <p className="text-muted-foreground mb-4">{category.description}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-5">{category.description}</p>
                 
                 {/* Item count badge */}
-                <span className="inline-block px-3 py-1 text-xs bg-primary/10 text-primary rounded-full">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium bg-primary/10 text-primary rounded-full group-hover:bg-primary/15 transition-colors">
                   {category.items}
                 </span>
               </div>
 
               {/* Decorative corner */}
-              <div className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-primary/20 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-0 right-0 w-28 h-28 border-r-2 border-b-2 border-primary/15 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
-          <button className="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full transition-all duration-300 font-medium">
-            View Full Menu
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+        <div className="text-center mt-14">
+          <button className="group inline-flex items-center gap-3 px-9 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full transition-all duration-300 font-medium">
+            <span>View Full Menu</span>
+            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </div>
       </div>
