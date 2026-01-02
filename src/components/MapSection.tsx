@@ -13,27 +13,32 @@ const MapSection = () => {
               <MapPin className="w-3.5 h-3.5" />
               <span>Our Location</span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground leading-[1.2]">
               Visit Us in <span className="text-primary italic">Thane</span>
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Find us in the heart of Panch Pakhdi, Thane. Experience the perfect blend of craft beer and culinary excellence in our neighborhood bar.
-            </p>
+            <div className="space-y-4">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Nestled in the bustling neighborhood of Panch Pakhdi, BarrelBorn stands as a testament to the art of fine dining and crafted brewing. Our space is designed to be your neighborhood sanctuary, where the clinking of glasses and the aroma of gourmet cuisine create the perfect backdrop for your stories.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Whether you're looking for a relaxing after-work pint, a celebratory dinner with friends, or a quiet spot to enjoy an artisan cocktail, our doors are open. Come experience why we are Thane's favorite destination for those who appreciate the finer details of hospitality.
+              </p>
+            </div>
             
-            <div className="pt-4 border-t border-border/40">
+            <div className="pt-6 border-t border-border/40">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <p className="text-foreground font-display text-xl mb-1">Address</p>
-                  <p className="text-muted-foreground leading-relaxed">Shop No: 3, Madanlal Dhingra Rd, Panch Pakhdi, Thane West</p>
+                  <p className="text-muted-foreground leading-relaxed">Shop No: 3, Madanlal Dhingra Rd, Panch Pakhdi, Thane West, Maharashtra 400602</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="relative rounded-3xl overflow-hidden border border-border/60 shadow-2xl h-[500px] lg:h-[600px] w-full group">
+          <div className="relative rounded-3xl overflow-hidden border border-border/60 shadow-2xl h-[400px] lg:h-[450px] w-full max-w-[550px] mx-auto lg:ml-auto group">
             {/* Overlay to match site aesthetics */}
             <div className="absolute inset-0 bg-primary/5 pointer-events-none z-10 group-hover:bg-transparent transition-colors duration-500" />
             
