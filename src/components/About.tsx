@@ -35,59 +35,85 @@ const About = () => {
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[150px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial opacity-40" />
-
+      
       <div className="container relative z-10 px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="section-header">
-          <span className="section-label">Our Story</span>
-          <h2 className="section-title">About Barrelborn</h2>
-          <div className="section-divider" />
-        </div>
-
-        {/* Content Grid */}
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Text Content */}
-          <div className="space-y-7">
-            <p className="text-xl text-foreground/90 leading-relaxed font-light">
-              Nestled in the vibrant heart of Thane, <span className="text-primary font-medium">Barrelborn</span> is more than just a restaurant – it's a celebration of craft, community, and culinary artistry.
-            </p>
-            <p className="text-muted-foreground leading-relaxed text-base">
-              Born from a passion for exceptional brews and unforgettable dining experiences, we've curated a space where every sip tells a story and every dish is a masterpiece. Our brewmasters pour their hearts into creating unique, barrel-aged beers that you won't find anywhere else.
-            </p>
-            <p className="text-muted-foreground leading-relaxed text-base">
-              From the warm amber glow of our interiors to the friendly clink of glasses, Barrelborn invites you to unwind, connect, and create memories that last a lifetime.
-            </p>
+          {/* Image Side */}
+          <div className="relative group">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border/50">
+              <img 
+                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800" 
+                alt="Barrelborn Interior" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            </div>
+            
+            {/* Floating smaller image */}
+            <div className="absolute -bottom-8 -right-8 w-1/2 aspect-square rounded-2xl overflow-hidden border-4 border-charcoal shadow-2xl hidden md:block">
+              <img 
+                src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&q=80&w=400" 
+                alt="Craft Cocktails" 
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-10 border-t border-border/50">
-              {stats.map((stat, index) => (
-                <div key={stat.label} className="text-center group">
-                  <span className="block font-display text-3xl sm:text-4xl md:text-5xl text-gradient-gold transition-transform duration-300 group-hover:scale-105">
-                    {stat.value}
-                  </span>
-                  <span className="text-sm text-muted-foreground mt-1 block">{stat.label}</span>
-                </div>
-              ))}
+            {/* Floating Badge */}
+            <div className="absolute -top-6 -left-6 bg-primary p-6 rounded-2xl shadow-xl hidden md:block animate-float">
+              <p className="font-display text-4xl text-black leading-none">05+</p>
+              <p className="text-xs text-black/80 font-bold uppercase tracking-wider mt-1">Years of Craft</p>
             </div>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid sm:grid-cols-2 gap-5">
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="group p-7 bg-secondary/40 rounded-2xl border border-border/40 hover:border-primary/40 card-hover backdrop-blur-sm"
-              >
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <feature.icon className="w-7 h-7 text-primary" />
+          {/* Text Content */}
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-sm block">Established 2021</span>
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground leading-tight">
+                Crafting <span className="text-gradient-gold">Unforgettable</span> Moments
+              </h2>
+            </div>
+            
+            <p className="text-xl text-foreground/90 leading-relaxed font-light italic">
+              "Every barrel has a story. At Barrelborn, we help you write yours over exceptional brews and world-class cuisine."
+            </p>
+            
+            <div className="space-y-6 text-muted-foreground leading-relaxed text-base">
+              <p>
+                Nestled in the vibrant heart of Thane, <span className="text-primary font-medium">Barrelborn</span> is more than just a restaurant – it's a celebration of craft, community, and culinary artistry.
+              </p>
+              <p>
+                Born from a passion for exceptional brews and unforgettable dining experiences, we've curated a space where every sip tells a story. Our brewmasters pour their hearts into creating unique, barrel-aged beers that reflect our commitment to excellence.
+              </p>
+            </div>
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-3 gap-8 py-8 border-y border-border/30">
+              {stats.map((stat) => (
+                <div key={stat.label} className="group">
+                  <span className="block font-display text-3xl sm:text-4xl text-gradient-gold transition-transform duration-300 group-hover:scale-110">
+                    {stat.value}
+                  </span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground mt-1 block font-bold">{stat.label}</span>
                 </div>
-                <h3 className="font-display text-xl text-foreground mb-2.5 group-hover:text-primary transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+              ))}
+            </div>
+
+            <div className="pt-4">
+              <div className="grid grid-cols-2 gap-4">
+                {features.slice(0, 2).map((feature) => (
+                  <div key={feature.title} className="flex items-start gap-4 p-4 rounded-xl bg-secondary/20 border border-border/30 hover:border-primary/30 transition-colors group">
+                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <feature.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-display text-foreground text-sm font-bold uppercase tracking-wider">{feature.title}</h4>
+                      <p className="text-xs text-muted-foreground mt-1 leading-tight">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
