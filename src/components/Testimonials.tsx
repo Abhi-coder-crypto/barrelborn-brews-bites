@@ -73,7 +73,9 @@ const Testimonials = () => {
         {/* Google Rating CTA */}
         <div className="text-center mt-16">
           <a
-            href="#"
+            href="https://www.google.com/search?sca_esv=7dcbc37479457eb0&sxsrf=AE3TifOlTeAcP_gEowkoFv3R5BVqDq4fTQ:1767374245174&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E9moAMXsS0ppftIa0AAstM7PU3IPOsk0_n4z2GibB7zwuuqJ_Zbkf-8VublAkI9bQoriLtiFfWv2pIsrhadjPCDP3j-pqozS1djY7fZfyFv3bCDwwiVEvOcINNV4GJ6DdbUIl5o%3D&q=Barrelborn+%7C+Dine+%26+Draft+%7C+Thane+Reviews&sa=X&ved=2ahUKEwjWkcaQru2RAxXekq8BHaEaJlYQ0bkNegQIKhAE&biw=1280&bih=632&dpr=1.5"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-4 px-7 py-3.5 bg-primary/10 hover:bg-primary/20 rounded-full transition-all duration-300"
           >
             <Star className="w-5 h-5 fill-primary text-primary" />
