@@ -36,9 +36,9 @@ const Hero = () => {
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[150px] animate-glow-pulse" />
       <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-gold-light/5 blur-[120px] animate-glow-pulse animation-delay-200" />
 
-      <div className="container relative z-10 px-4 sm:px-6 text-center flex flex-col items-center justify-center h-full pt-16 pb-20">
+      <div className="container relative z-10 px-4 sm:px-6 text-center flex flex-col items-center justify-center h-full pt-24 pb-20">
         {/* Logo Icon with Double Rings and Glow */}
-        <div className="mb-8 animate-fade-up scale-90 sm:scale-100">
+        <div className="mb-6 animate-fade-up scale-90 sm:scale-100">
           <div className="relative inline-flex items-center justify-center w-28 h-28 md:w-32 md:h-32">
             {/* Outer Ring */}
             <div className="absolute inset-0 rounded-full border border-primary/20 animate-[ping_3s_ease-in-out_infinite]" />
