@@ -47,7 +47,7 @@ const categories = [
 
 const MenuCategories = () => {
   return (
-    <section id="menu" className="section-padding bg-background relative overflow-hidden">
+    <section id="menu" className="section-padding bg-background relative overflow-hidden reveal">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-pattern opacity-40" />
       

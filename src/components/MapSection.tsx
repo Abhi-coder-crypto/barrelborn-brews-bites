@@ -5,7 +5,7 @@ const MapSection = () => {
   const embedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d941.9790696773539!2d72.9642055695039!3d19.198814766863077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9195d8527a9%3A0xe67f5399587a8b4b!2sBarrelborn!5e1!3m2!1sen!2sin!4v1735824000000!5m2!1sen!2sin&t=k";
 
   return (
-    <section id="location" className="relative py-20 overflow-hidden bg-background">
+    <section id="location" className="relative py-20 overflow-hidden bg-background reveal">
       <div className="container px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-2xl">

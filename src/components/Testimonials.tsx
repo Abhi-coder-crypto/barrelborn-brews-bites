@@ -23,7 +23,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="section-padding bg-charcoal relative overflow-hidden">
+    <section id="testimonials" className="section-padding bg-charcoal relative overflow-hidden reveal">
       {/* Decorative elements */}
       <div className="absolute top-10 right-10 lg:top-20 lg:right-20 text-primary/4">
         <Quote className="w-48 h-48 lg:w-72 lg:h-72" />
