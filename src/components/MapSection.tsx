@@ -34,12 +34,12 @@ const MapSection = () => {
           </a>
         </div>
 
-        <div className="relative rounded-2xl overflow-hidden border border-border/60 shadow-2xl h-[450px] w-full group">
+        <div className="relative rounded-2xl overflow-hidden border border-border/60 shadow-2xl h-[450px] max-w-4xl mx-auto w-full group">
           {/* Overlay to match site aesthetics */}
           <div className="absolute inset-0 bg-primary/5 pointer-events-none z-10 group-hover:bg-transparent transition-colors duration-500" />
           
           <iframe
-            src={embedUrl}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d941.9790696773539!2d72.9642055695039!3d19.198814766863077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9195d8527a9%3A0xe67f5399587a8b4b!2sBarrelborn!5e1!3m2!1sen!2sin!4v1735824000000!5m2!1sen!2sin&t=k"
             width="100%"
             height="100%"
             style={{ border: 0 }}
