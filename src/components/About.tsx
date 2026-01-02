@@ -105,9 +105,8 @@ const About = () => {
                     <div className="absolute inset-0 bg-black/80 group-hover:bg-black/70 transition-colors duration-300" />
                     
                     {/* Content */}
-                    <div className="relative z-10 p-4 h-full flex flex-col justify-center items-center text-center">
+                    <div className="relative z-10 p-4 h-full flex flex-col justify-start items-start text-left">
                       <h4 className="font-display text-foreground text-[10px] font-bold uppercase tracking-[0.2em]">{feature.title}</h4>
-                      <p className="text-[9px] text-muted-foreground mt-1 leading-tight font-medium">{feature.description}</p>
                     </div>
                   </div>
                 ))}
