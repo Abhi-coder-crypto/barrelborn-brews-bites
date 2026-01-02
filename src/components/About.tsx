@@ -46,7 +46,7 @@ const About = () => {
           <div className="relative group lg:max-w-md mx-auto">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border/50 shadow-2xl">
               <img 
-                src="/src/assets/gallery-interior.jpg" 
+                src="/assets/our-story.jpg" 
                 alt="Barrelborn Interior" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
