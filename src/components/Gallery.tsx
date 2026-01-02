@@ -12,7 +12,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="section-padding bg-background relative overflow-hidden reveal">
+    <section id="gallery" className="py-12 bg-background relative overflow-hidden reveal">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-pattern opacity-25" />
       
