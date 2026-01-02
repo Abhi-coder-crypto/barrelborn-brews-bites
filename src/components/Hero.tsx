@@ -10,10 +10,25 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-pattern overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/src/assets/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
       {/* Background layers */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-1" />
       <div className="absolute inset-0 bg-gradient-radial opacity-60" />
       
       {/* Animated glow orbs */}
