@@ -21,13 +21,17 @@ const Footer = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-40 bg-primary/5 blur-[100px]" />
 
-      <div className="container relative z-10 px-4 sm:px-6 py-16 md:py-20 lg:py-24">
+      <div className="container relative z-10 px-4 sm:px-6 py-12 md:py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center">
-                <span className="font-display text-primary text-2xl font-bold">B</span>
+              <div className="w-14 h-14 rounded-full border-2 border-primary/30 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/assets/logo.png" 
+                  alt="BarrelBorn Logo" 
+                  className="w-[85%] h-[85%] object-contain"
+                />
               </div>
               <div>
                 <h3 className="font-display text-xl text-foreground">BARRELBORN</h3>
@@ -132,7 +136,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 lg:mt-20 pt-8 border-t border-border/40">
+        <div className="mt-12 lg:mt-16 pt-8 border-t border-border/40">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
               © 2025 Barrelborn. All rights reserved.
