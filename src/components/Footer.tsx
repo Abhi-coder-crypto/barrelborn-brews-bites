@@ -120,7 +120,9 @@ const Footer = () => {
             
             {/* Directions CTA */}
             <a 
-              href="#" 
+              href="https://www.google.com/maps/reserve/v/dine/c/nRwh5U7Ank8?source=pa&opi=89978449&hl=en-IN&gei=qvVXac2oMNbZ1e8P_4TeyQ8&sourceurl=https://www.google.com/search?q%3Dbarrel%2Bborn%26oq%3Dbarrel%2Bborn%26gs_lcrp%3DEgZjaHJvbWUyDggAEEUYJxg5GIAEGIoFMgwIARAjGCcYgAQYigUyBwgCEAAYgAQyBwgDEAAYgAQyCAgEEAAYFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINDM4MWowajSoAgCwAgE%26sourceid%3Dchrome%26ie%3DUTF-8" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 text-sm text-primary hover:text-gold-light transition-colors group"
             >
               <span>Get Directions</span>

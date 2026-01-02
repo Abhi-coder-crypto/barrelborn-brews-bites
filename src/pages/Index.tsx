@@ -4,6 +4,7 @@ import About from "@/components/About";
 import MenuCategories from "@/components/MenuCategories";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
+import MapSection from "@/components/MapSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
         <MenuCategories />
         <Testimonials />
         <Gallery />
+        <MapSection />
       </main>
       <Footer />
     </div>
