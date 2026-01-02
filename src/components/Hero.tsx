@@ -10,10 +10,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-[80px]"
+      className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden"
     >
-      {/* Background Video - Absolute to section only */}
-      <div className="absolute inset-0 z-0 h-full w-full pointer-events-none">
+      {/* Background Video - Covers the entire viewport including header area */}
+      <div className="absolute inset-0 -top-[80px] h-[calc(100dvh+80px)] w-full pointer-events-none z-0">
         <video
           autoPlay
           muted
