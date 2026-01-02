@@ -21,29 +21,6 @@ const testimonials = [
   },
 ];
 
-import { Star, Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    name: "Rahul Sharma",
-    role: "Food Enthusiast",
-    content: "The craft beers here are absolutely phenomenal! Each brew has its own unique character. The ambiance perfectly complements the experience. A must-visit in Thane!",
-    rating: 5,
-  },
-  {
-    name: "Priya Mehta",
-    role: "Regular Patron",
-    content: "Barrelborn has become my go-to spot for weekend dinners. The cocktails are innovative, and their butter garlic prawns are to die for. The staff is incredibly warm and welcoming.",
-    rating: 5,
-  },
-  {
-    name: "Amit Desai",
-    role: "Beer Connoisseur",
-    content: "As someone who appreciates good craft beer, I'm impressed by their selection. The barrel-aged stout is exceptional. Great food pairings and knowledgeable bartenders!",
-    rating: 5,
-  },
-];
-
 const Testimonials = () => {
   return (
     <section id="testimonials" className="section-padding bg-charcoal relative overflow-hidden">
