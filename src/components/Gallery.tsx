@@ -35,7 +35,7 @@ const Gallery = () => {
               <video
                 src={video.src}
                 className="w-full h-full object-cover"
-                controls
+                autoPlay
                 muted
                 loop
                 playsInline
