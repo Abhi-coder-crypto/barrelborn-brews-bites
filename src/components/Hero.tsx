@@ -10,26 +10,26 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-[80px]"
     >
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Video - Absolute to section only */}
+      <div className="absolute inset-0 z-0 h-full w-full pointer-events-none">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="h-full w-full object-cover"
         >
           <source src="/src/assets/hero-video.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/50" />
+        {/* Dark overlay scoped only to the video area */}
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Background layers */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-1" />
-      <div className="absolute inset-0 bg-gradient-radial opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background z-[1]" />
+      <div className="absolute inset-0 bg-gradient-radial opacity-40 z-[1]" />
       
       {/* Animated glow orbs */}
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[150px] animate-glow-pulse" />
