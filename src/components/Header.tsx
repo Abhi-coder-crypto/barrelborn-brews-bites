@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -13,71 +13,112 @@ const navLinks = [
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    const element = document.querySelector(href);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? "bg-background/95 backdrop-blur-lg border-b border-border/50 py-3" 
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <div className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center">
-              <span className="font-display text-primary text-xl font-bold">B</span>
+          <button 
+            onClick={() => handleNavClick("#home")}
+            className="flex items-center gap-3 group"
+          >
+            <div className={`rounded-full border-2 border-primary flex items-center justify-center transition-all duration-300 group-hover:border-gold-light group-hover:shadow-gold ${
+              isScrolled ? "w-10 h-10" : "w-12 h-12"
+            }`}>
+              <span className={`font-display text-primary font-bold transition-all duration-300 group-hover:text-gold-light ${
+                isScrolled ? "text-lg" : "text-xl"
+              }`}>B</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="font-display text-xl text-foreground tracking-wide">BARRELBORN</h1>
-              <p className="text-xs text-muted-foreground tracking-[0.3em]">DINE & DRAFT</p>
+              <h1 className={`font-display text-foreground tracking-wide transition-all duration-300 ${
+                isScrolled ? "text-lg" : "text-xl"
+              }`}>BARRELBORN</h1>
+              <p className="text-[10px] text-muted-foreground tracking-[0.25em]">DINE & DRAFT</p>
             </div>
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300"
+                onClick={() => handleNavClick(link.href)}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 link-underline py-1"
               >
                 {link.name}
-              </a>
+              </button>
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 glow-gold">
+            <Button 
+              onClick={() => handleNavClick("#contact")}
+              className="btn-primary glow-gold rounded-full px-6"
+            >
               Reserve Table
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-foreground p-2"
+            className="lg:hidden text-foreground p-2 hover:text-primary transition-colors"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <nav className="lg:hidden py-6 border-t border-border/50">
-            <div className="flex flex-col gap-4">
+        <div 
+          className={`lg:hidden overflow-hidden transition-all duration-500 ease-out ${
+            isOpen ? "max-h-[400px] opacity-100 mt-4" : "max-h-0 opacity-0"
+          }`}
+        >
+          <nav className="py-6 border-t border-border/50">
+            <div className="flex flex-col gap-1 stagger-children">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors py-2"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-lg font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all py-3 px-4 rounded-lg text-left"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4 w-full">
+              <Button 
+                onClick={() => handleNavClick("#contact")}
+                className="btn-primary mt-4 w-full rounded-full"
+              >
                 Reserve Table
               </Button>
             </div>
           </nav>
-        )}
+        </div>
       </div>
     </header>
   );
