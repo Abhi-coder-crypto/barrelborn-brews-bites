@@ -10,10 +10,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+      className="relative h-screen w-full flex items-center justify-center overflow-hidden pt-[80px]"
     >
-      {/* Background Video - Covers the entire viewport including header area */}
-      <div className="absolute inset-0 h-full w-full pointer-events-none z-0">
+      {/* Background Video - Scoped strictly below the header */}
+      <div className="absolute inset-0 top-[80px] h-[calc(100vh-80px)] w-full pointer-events-none z-0">
         <video
           autoPlay
           muted
@@ -28,8 +28,9 @@ const Hero = () => {
       </div>
 
       {/* Background layers */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background z-[1]" />
-      <div className="absolute inset-0 bg-gradient-radial opacity-40 z-[1]" />
+      <div className="absolute inset-0 bg-background pointer-events-none z-[-1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-[1] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-radial opacity-40 z-[1] pointer-events-none" />
       
       {/* Animated glow orbs */}
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[150px] animate-glow-pulse" />
