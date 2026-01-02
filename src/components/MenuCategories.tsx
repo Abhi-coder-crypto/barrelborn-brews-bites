@@ -47,22 +47,22 @@ const categories = [
 
 const MenuCategories = () => {
   return (
-    <section id="menu" className="section-padding bg-background relative overflow-hidden reveal">
+    <section id="menu" className="py-12 bg-background relative overflow-hidden reveal">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-pattern opacity-40" />
       
       <div className="container relative z-10 px-4 sm:px-6">
-        <div className="section-header">
+        <div className="section-header mb-8">
           <span className="section-label">Our Menu</span>
           <h2 className="section-title">Menu Categories</h2>
           <div className="section-divider" />
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {categories.map((category) => (
             <div
               key={category.name}
-              className="group relative bg-card rounded-2xl border border-border/40 overflow-hidden hover-elevate cursor-pointer"
+              className="group relative bg-card rounded-xl border border-border/40 overflow-hidden hover-elevate cursor-pointer"
             >
               {/* Image Section */}
               <div className="aspect-[16/10] overflow-hidden">
@@ -75,21 +75,14 @@ const MenuCategories = () => {
               </div>
 
               {/* Content Section */}
-              <div className="p-6 relative">
-                <div className="absolute -top-8 left-6 w-12 h-12 rounded-xl bg-primary flex items-center justify-center shadow-lg">
-                  <category.icon className="w-6 h-6 text-primary-foreground" />
-                </div>
-                
-                <div className="mt-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <h3 className="font-display text-2xl text-foreground group-hover:text-primary transition-colors">
+              <div className="p-4 relative">
+                <div className="">
+                  <div className="flex justify-between items-center mb-1">
+                    <h3 className="font-display text-lg sm:text-xl text-foreground group-hover:text-primary transition-colors">
                       {category.name}
                     </h3>
-                    <span className="text-xs font-medium bg-primary/10 text-primary px-3 py-1 rounded-full">
-                      {category.items}
-                    </span>
                   </div>
-                  <p className="text-muted-foreground text-sm line-clamp-2">
+                  <p className="text-muted-foreground text-xs line-clamp-2">
                     {category.description}
                   </p>
                 </div>
