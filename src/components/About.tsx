@@ -40,9 +40,9 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image Side */}
           <div className="relative group">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border/50">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border/50 shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800" 
+                src="/src/assets/gallery-interior.jpg" 
                 alt="Barrelborn Interior" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -52,7 +52,7 @@ const About = () => {
             {/* Floating smaller image */}
             <div className="absolute -bottom-8 -right-8 w-1/2 aspect-square rounded-2xl overflow-hidden border-4 border-charcoal shadow-2xl hidden md:block">
               <img 
-                src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&q=80&w=400" 
+                src="/src/assets/gallery-cocktail.jpg" 
                 alt="Craft Cocktails" 
                 className="w-full h-full object-cover"
               />
@@ -102,7 +102,7 @@ const About = () => {
             <div className="pt-4">
               <div className="grid grid-cols-2 gap-4">
                 {features.slice(0, 2).map((feature) => (
-                  <div key={feature.title} className="flex items-start gap-4 p-4 rounded-xl bg-secondary/20 border border-border/30 hover:border-primary/30 transition-colors group">
+                  <div key={feature.title} className="flex items-start gap-4 p-4 rounded-xl bg-secondary/20 border border-border/30 hover:border-primary/30 transition-all duration-300 group hover-elevate">
                     <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                       <feature.icon className="w-5 h-5 text-primary" />
                     </div>
