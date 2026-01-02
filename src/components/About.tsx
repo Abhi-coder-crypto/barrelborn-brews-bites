@@ -106,9 +106,6 @@ const About = () => {
                     
                     {/* Content */}
                     <div className="relative z-10 p-4 h-full flex flex-col justify-center items-center text-center">
-                      <div className="mb-2 p-1.5 bg-primary/20 rounded-xl group-hover:bg-primary/30 transition-colors">
-                        <feature.icon className="w-4 h-4 text-primary" />
-                      </div>
                       <h4 className="font-display text-foreground text-[10px] font-bold uppercase tracking-[0.2em]">{feature.title}</h4>
                       <p className="text-[9px] text-muted-foreground mt-1 leading-tight font-medium">{feature.description}</p>
                     </div>
