@@ -68,7 +68,8 @@ const About = () => {
           {/* Text Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <span className="text-primary font-bold tracking-[0.3em] uppercase text-sm block">Established 2021</span>
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-sm block">Our Story</span>
+              <span className="text-primary/60 font-medium tracking-[0.2em] uppercase text-[10px] block">Established 2021</span>
               <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground leading-tight">
                 Crafting <span className="text-gradient-gold">Unforgettable</span> Moments
               </h2>
@@ -82,9 +83,6 @@ const About = () => {
               <p>
                 Nestled in the vibrant heart of Thane, <span className="text-primary font-medium">Barrelborn</span> is more than just a restaurant – it's a celebration of craft, community, and culinary artistry.
               </p>
-              <p>
-                Born from a passion for exceptional brews and unforgettable dining experiences, we've curated a space where every sip tells a story. Our brewmasters pour their hearts into creating unique, barrel-aged beers that reflect our commitment to excellence.
-              </p>
             </div>
 
             {/* Stats Grid */}
@@ -94,21 +92,21 @@ const About = () => {
                   <span className="block font-display text-3xl sm:text-4xl text-gradient-gold transition-transform duration-300 group-hover:scale-110">
                     {stat.value}
                   </span>
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground mt-1 block font-bold">{stat.label}</span>
+                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1 block font-bold">{stat.label}</span>
                 </div>
               ))}
             </div>
 
             <div className="pt-4">
               <div className="grid grid-cols-2 gap-4">
-                {features.slice(0, 2).map((feature) => (
+                {features.map((feature) => (
                   <div key={feature.title} className="flex items-start gap-4 p-4 rounded-xl bg-secondary/20 border border-border/30 hover:border-primary/30 transition-all duration-300 group hover-elevate">
                     <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                       <feature.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-display text-foreground text-sm font-bold uppercase tracking-wider">{feature.title}</h4>
-                      <p className="text-xs text-muted-foreground mt-1 leading-tight">{feature.description}</p>
+                      <h4 className="font-display text-foreground text-[10px] font-bold uppercase tracking-wider">{feature.title}</h4>
+                      <p className="text-[10px] text-muted-foreground mt-1 leading-tight">{feature.description}</p>
                     </div>
                   </div>
                 ))}
