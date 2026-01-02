@@ -61,7 +61,7 @@ const Hero = () => {
         </p>
 
         <p className="max-w-md mx-auto text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-8 animate-fade-up animation-delay-400 px-4">
-          Crafted beers, artisan cocktails, and culinary excellence in the heart of Thane
+          Where the city chills. Crafted beers, artisan cocktails, and culinary excellence in the heart of Thane
         </p>
 
         {/* CTA Buttons */}
