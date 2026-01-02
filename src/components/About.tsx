@@ -74,9 +74,9 @@ const About = () => {
             <div className="space-y-3">
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs block">Our Story</span>
               <span className="text-primary/60 font-medium tracking-[0.2em] uppercase text-[10px] block">Established 2021</span>
-              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground leading-[1.1]">
-                Crafting <span className="text-gradient-gold">Unforgettable</span> Moments
-              </h2>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground leading-[1.1] max-w-[500px]">
+              Crafting <span className="text-gradient-gold">Unforgettable</span> Moments
+            </h2>
             </div>
             
             <div className="space-y-6">
@@ -101,8 +101,8 @@ const About = () => {
                       alt={feature.title} 
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    {/* Overlay - Darker for visibility */}
-                    <div className="absolute inset-0 bg-black/80 group-hover:bg-black/70 transition-colors duration-300" />
+                    {/* Overlay - Subtle for visibility */}
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
                     
                     {/* Content */}
                     <div className="relative z-10 p-4 h-full flex flex-col justify-start items-start text-left">
