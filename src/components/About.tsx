@@ -35,7 +35,7 @@ const stats = [
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-charcoal relative overflow-hidden reveal">
+    <section id="about" className="py-24 bg-charcoal relative overflow-hidden reveal">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[150px]" />
@@ -43,8 +43,8 @@ const About = () => {
       <div className="container relative z-10 px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image Side */}
-          <div className="relative group lg:max-w-md mx-auto">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border/50 shadow-2xl">
+          <div className="relative group w-full">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border/50 shadow-2xl">
               <img 
                 src="/assets/our-story.jpg" 
                 alt="Barrelborn Interior" 
