@@ -27,10 +27,11 @@ const Gallery = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videos.map((video) => (
+          {videos.map((video, index) => (
             <div
               key={video.id}
-              className="aspect-[9/16] rounded-2xl overflow-hidden border border-border/50 bg-black/20"
+              className="aspect-[9/16] rounded-2xl overflow-hidden border border-border/50 bg-black/20 reveal-scale"
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               <video
                 src={video.src}

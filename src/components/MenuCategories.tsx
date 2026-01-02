@@ -59,10 +59,11 @@ const MenuCategories = () => {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <div
               key={category.name}
-              className="group relative bg-card rounded-xl border border-border/40 overflow-hidden hover-elevate cursor-pointer"
+              className="group relative bg-card rounded-xl border border-border/40 overflow-hidden hover-elevate cursor-pointer reveal-scale"
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Image Section */}
               <div className="aspect-[16/10] overflow-hidden">

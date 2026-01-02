@@ -43,7 +43,7 @@ const About = () => {
       <div className="container relative z-10 px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image Side */}
-          <div className="relative group w-full">
+          <div className="relative group w-full reveal-left">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border/50 shadow-2xl">
               <img 
                 src="/assets/our-story.jpg" 
@@ -70,7 +70,7 @@ const About = () => {
           </div>
 
           {/* Text Content */}
-          <div className="flex flex-col justify-center space-y-8">
+          <div className="flex flex-col justify-center space-y-8 reveal-right">
             <div className="space-y-3">
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs block">Our Story</span>
               <span className="text-primary/60 font-medium tracking-[0.2em] uppercase text-[10px] block">Established 2021</span>
