@@ -4,22 +4,26 @@ const features = [
   {
     icon: Beer,
     title: "Crafted Beers",
-    description: "Exclusive selection of handcrafted beers brewed to perfection",
+    description: "Exclusive selection of handcrafted beers",
+    image: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&q=80&w=400"
   },
   {
     icon: Utensils,
     title: "Gourmet Cuisine",
-    description: "Fusion of global flavors with locally sourced ingredients",
+    description: "Fusion of global flavors",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400"
   },
   {
     icon: Music,
-    title: "Live Entertainment",
-    description: "Weekend performances and curated playlists for the perfect vibe",
+    title: "Live Music",
+    description: "Soulful weekend performances",
+    image: "https://images.unsplash.com/photo-1514525253344-a813099ea1e1?auto=format&fit=crop&q=80&w=400"
   },
   {
     icon: Users,
     title: "Private Events",
-    description: "Exclusive spaces for celebrations and corporate gatherings",
+    description: "Exclusive spaces for gatherings",
+    image: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&q=80&w=400"
   },
 ];
 
@@ -100,11 +104,21 @@ const About = () => {
             <div className="pt-4">
               <div className="grid grid-cols-2 gap-4">
                 {features.map((feature) => (
-                  <div key={feature.title} className="flex items-start gap-4 p-4 rounded-xl bg-secondary/20 border border-border/30 hover:border-primary/30 transition-all duration-300 group hover-elevate">
-                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                      <feature.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
+                  <div key={feature.title} className="relative group overflow-hidden rounded-xl border border-border/30 hover-elevate transition-all duration-500 aspect-square sm:aspect-auto sm:h-32">
+                    {/* Background Image */}
+                    <img 
+                      src={feature.image} 
+                      alt={feature.title} 
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-colors duration-300" />
+                    
+                    {/* Content */}
+                    <div className="relative z-10 p-4 h-full flex flex-col justify-center items-center text-center">
+                      <div className="mb-2 p-1.5 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
+                        <feature.icon className="w-4 h-4 text-primary" />
+                      </div>
                       <h4 className="font-display text-foreground text-[10px] font-bold uppercase tracking-wider">{feature.title}</h4>
                       <p className="text-[10px] text-muted-foreground mt-1 leading-tight">{feature.description}</p>
                     </div>
