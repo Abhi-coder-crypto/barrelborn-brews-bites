@@ -1,41 +1,47 @@
 import { useState } from "react";
+import galleryBeer from "@/assets/gallery-beer.jpg";
+import galleryFood from "@/assets/gallery-food.jpg";
+import galleryCocktail from "@/assets/gallery-cocktail.jpg";
+import galleryInterior from "@/assets/gallery-interior.jpg";
+import galleryPrivate from "@/assets/gallery-private.jpg";
+import galleryEvents from "@/assets/gallery-events.jpg";
 
 const galleryImages = [
   {
     id: 1,
     title: "Craft Beer Selection",
     category: "drinks",
-    gradient: "from-amber-900/80 to-amber-700/60",
+    image: galleryBeer,
   },
   {
     id: 2,
-    title: "Gourmet Dishes",
+    title: "Gourmet Prawns",
     category: "food",
-    gradient: "from-orange-900/80 to-red-800/60",
+    image: galleryFood,
   },
   {
     id: 3,
     title: "Bar Ambiance",
     category: "interior",
-    gradient: "from-stone-900/80 to-zinc-800/60",
+    image: galleryInterior,
   },
   {
     id: 4,
     title: "Signature Cocktails",
     category: "drinks",
-    gradient: "from-rose-900/80 to-pink-800/60",
+    image: galleryCocktail,
   },
   {
     id: 5,
     title: "Private Dining",
     category: "interior",
-    gradient: "from-slate-900/80 to-gray-800/60",
+    image: galleryPrivate,
   },
   {
     id: 6,
     title: "Live Events",
     category: "events",
-    gradient: "from-purple-900/80 to-indigo-800/60",
+    image: galleryEvents,
   },
 ];
 
@@ -85,19 +91,23 @@ const Gallery = () => {
 
         {/* Gallery Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredImages.map((image, index) => (
+          {filteredImages.map((image) => (
             <div
               key={image.id}
               className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer"
             >
-              {/* Gradient Background (placeholder for actual images) */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${image.gradient}`} />
+              {/* Actual Image */}
+              <img 
+                src={image.image} 
+                alt={image.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
               
-              {/* Pattern overlay */}
-              <div className="absolute inset-0 bg-pattern opacity-20" />
+              {/* Dark overlay on hover */}
+              <div className="absolute inset-0 bg-background/0 group-hover:bg-background/70 transition-all duration-500" />
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+              {/* Hover content */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <h3 className="font-display text-2xl text-foreground mb-2">{image.title}</h3>
                   <span className="text-sm text-primary uppercase tracking-wider">{image.category}</span>
