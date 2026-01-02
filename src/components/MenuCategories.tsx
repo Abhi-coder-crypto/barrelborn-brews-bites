@@ -61,35 +61,51 @@ const MenuCategories = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+        <div className="space-y-20">
           {categories.map((category, index) => (
-            <div
-              key={category.name}
-              className="group relative p-8 lg:p-9 bg-card/80 rounded-2xl border border-border/40 hover:border-primary/40 card-hover cursor-pointer overflow-hidden backdrop-blur-sm"
-            >
-              {/* Hover gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative z-10">
-                {/* Icon */}
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/15 transition-all duration-400">
-                  <category.icon className="w-8 h-8 text-primary" />
+            <div key={category.name} className="relative">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <category.icon className="w-6 h-6 text-primary" />
                 </div>
-
-                {/* Content */}
-                <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="font-display text-3xl text-foreground">
                   {category.name}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-5">{category.description}</p>
-                
-                {/* Item count badge */}
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium bg-primary/10 text-primary rounded-full group-hover:bg-primary/15 transition-colors">
-                  {category.items}
-                </span>
+                <div className="h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent" />
               </div>
 
-              {/* Decorative corner */}
-              <div className="absolute bottom-0 right-0 w-28 h-28 border-r-2 border-b-2 border-primary/15 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+                <div
+                  className="group relative p-8 lg:p-9 bg-card/80 rounded-2xl border border-border/40 hover:border-primary/40 card-hover cursor-pointer overflow-hidden backdrop-blur-sm"
+                >
+                  {/* Hover gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    {/* Content */}
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-5">{category.description}</p>
+                    
+                    {/* Item count badge */}
+                    <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium bg-primary/10 text-primary rounded-full group-hover:bg-primary/15 transition-colors">
+                      {category.items}
+                    </span>
+                  </div>
+
+                  {/* Decorative corner */}
+                  <div className="absolute bottom-0 right-0 w-28 h-28 border-r-2 border-b-2 border-primary/15 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+                
+                {/* Placeholder menu items for this section */}
+                {[1, 2].map((i) => (
+                  <div key={i} className="p-8 bg-card/40 rounded-2xl border border-border/20 backdrop-blur-sm flex justify-between items-start gap-4">
+                    <div>
+                      <h4 className="font-semibold text-lg">Featured {category.name} Item {i}</h4>
+                      <p className="text-muted-foreground text-sm">Specially prepared with local ingredients and artisanal techniques.</p>
+                    </div>
+                    <span className="font-bold text-primary">$18.00</span>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>

@@ -90,7 +90,29 @@ const Gallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-16">
+          {/* Instagram Reels */}
+          <div className="aspect-[9/16] rounded-2xl overflow-hidden border border-border/50">
+            <iframe
+              src="https://www.instagram.com/tastentell/reel/DS2byw7jAsK/embed"
+              className="w-full h-full"
+              frameBorder="0"
+              scrolling="no"
+              allowTransparency={true}
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            ></iframe>
+          </div>
+          <div className="aspect-[9/16] rounded-2xl overflow-hidden border border-border/50">
+            <iframe
+              src="https://www.instagram.com/barrelborn_/reel/DSFV55gE9x0/embed"
+              className="w-full h-full"
+              frameBorder="0"
+              scrolling="no"
+              allowTransparency={true}
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            ></iframe>
+          </div>
+
           {filteredImages.map((image) => (
             <div
               key={image.id}
