@@ -63,7 +63,7 @@ const Header = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-12 ml-auto mr-12">
             {navLinks.map((link) => (
               <button
                 key={link.name}
@@ -74,16 +74,6 @@ const Header = () => {
               </button>
             ))}
           </nav>
-
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button 
-              onClick={() => handleNavClick("#contact")}
-              className="btn-primary glow-gold rounded-full px-6"
-            >
-              Reserve Table
-            </Button>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -112,12 +102,6 @@ const Header = () => {
                   {link.name}
                 </button>
               ))}
-              <Button 
-                onClick={() => handleNavClick("#contact")}
-                className="btn-primary mt-4 w-full rounded-full"
-              >
-                Reserve Table
-              </Button>
             </div>
           </nav>
         </div>
