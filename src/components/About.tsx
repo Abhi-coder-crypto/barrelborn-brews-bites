@@ -35,7 +35,7 @@ const stats = [
 
 const About = () => {
   return (
-    <section id="about" className="section-padding bg-charcoal relative overflow-hidden">
+    <section id="about" className="py-20 bg-charcoal relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[150px]" />
