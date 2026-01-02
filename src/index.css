@@ -201,6 +201,15 @@
     animation: shimmer 2.5s linear infinite;
   }
 
+  .animate-marquee-horizontal {
+    animation: marquee-horizontal 40s linear infinite;
+  }
+
+  @keyframes marquee-horizontal {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% / 3)); }
+  }
+
   @keyframes float {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-12px) rotate(1deg); }
