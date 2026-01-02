@@ -10,10 +10,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden"
+      className="relative h-screen w-full flex items-center justify-center overflow-hidden"
     >
       {/* Background Video - Covers the entire viewport including header area */}
-      <div className="absolute inset-0 -top-[80px] h-[calc(100dvh+80px)] w-full pointer-events-none z-0">
+      <div className="absolute inset-0 h-full w-full pointer-events-none z-0">
         <video
           autoPlay
           muted
@@ -35,77 +35,77 @@ const Hero = () => {
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[150px] animate-glow-pulse" />
       <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-gold-light/5 blur-[120px] animate-glow-pulse animation-delay-200" />
 
-      <div className="container relative z-10 px-4 sm:px-6 text-center pt-24 pb-16">
+      <div className="container relative z-10 px-4 sm:px-6 text-center flex flex-col items-center justify-center h-full pt-16">
         {/* Logo Icon */}
-        <div className="mb-10 animate-fade-up">
-          <div className="inline-flex items-center justify-center w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full border border-primary/40 animate-float">
-            <div className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full bg-gradient-to-br from-primary/10 to-transparent border border-primary/30 flex items-center justify-center backdrop-blur-sm">
-              <span className="font-display text-4xl md:text-5xl lg:text-6xl text-gradient-gold">B</span>
+        <div className="mb-6 animate-fade-up scale-90 sm:scale-100">
+          <div className="inline-flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full border border-primary/40 animate-float">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-primary/10 to-transparent border border-primary/30 flex items-center justify-center backdrop-blur-sm">
+              <span className="font-display text-3xl md:text-4xl text-gradient-gold">B</span>
             </div>
           </div>
         </div>
 
         {/* Main Title */}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-5 animate-fade-up animation-delay-200 tracking-tight">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground mb-3 animate-fade-up animation-delay-200 tracking-tight leading-tight">
           BARRELBORN
         </h1>
         
-        <p className="text-base sm:text-lg md:text-xl tracking-[0.5em] text-primary font-light mb-10 animate-fade-up animation-delay-300">
+        <p className="text-sm sm:text-base md:text-lg tracking-[0.5em] text-primary font-light mb-6 animate-fade-up animation-delay-300">
           DINE & DRAFT
         </p>
 
-        <p className="max-w-lg mx-auto text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed mb-12 animate-fade-up animation-delay-400">
+        <p className="max-w-md mx-auto text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-8 animate-fade-up animation-delay-400 px-4">
           Crafted beers, artisan cocktails, and culinary excellence in the heart of Thane
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 mb-14 animate-fade-up animation-delay-500">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 animate-fade-up animation-delay-500 w-full px-6 max-w-xl">
           <Button
             size="lg"
             onClick={() => scrollToSection("menu")}
-            className="btn-outline px-8 py-6 text-base sm:text-lg rounded-full w-full sm:w-auto min-w-[200px]"
+            className="btn-outline px-6 py-5 text-sm sm:text-base rounded-full w-full sm:w-auto min-w-[180px]"
           >
             Explore Our Menu
           </Button>
           <Button
             size="lg"
             onClick={() => scrollToSection("contact")}
-            className="btn-primary glow-gold px-8 py-6 text-base sm:text-lg rounded-full w-full sm:w-auto min-w-[200px]"
+            className="btn-primary glow-gold px-6 py-5 text-sm sm:text-base rounded-full w-full sm:w-auto min-w-[180px]"
           >
             Reserve a Table
           </Button>
         </div>
 
         {/* Rating & Location */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8 text-muted-foreground animate-fade-up animation-delay-600">
-          <div className="flex items-center gap-2.5 group">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-muted-foreground animate-fade-up animation-delay-600 mb-4">
+          <div className="flex items-center gap-2 group">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
                 <Star 
                   key={i} 
-                  className="w-4 h-4 sm:w-5 sm:h-5 fill-primary text-primary transition-transform duration-300 group-hover:scale-110" 
+                  className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-primary text-primary transition-transform duration-300 group-hover:scale-110" 
                   style={{ transitionDelay: `${i * 50}ms` }}
                 />
               ))}
             </div>
-            <span className="text-sm sm:text-base font-medium">4.8 on Google</span>
+            <span className="text-xs sm:text-sm font-medium">4.8 on Google</span>
           </div>
-          <div className="hidden sm:block w-px h-5 bg-border" />
+          <div className="hidden sm:block w-px h-4 bg-border" />
           <div className="flex items-center gap-2 group">
-            <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary transition-transform duration-300 group-hover:scale-110" />
-            <span className="text-sm sm:text-base">Thane West, Maharashtra</span>
+            <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-xs sm:text-sm">Thane West, Maharashtra</span>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <button 
-          onClick={() => scrollToSection("about")}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer group"
-          aria-label="Scroll to next section"
-        >
-          <ChevronDown className="w-7 h-7 sm:w-8 sm:h-8 text-primary/50 group-hover:text-primary transition-colors duration-300" />
-        </button>
       </div>
+
+      {/* Scroll Indicator */}
+      <button 
+        onClick={() => scrollToSection("about")}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer group z-20"
+        aria-label="Scroll to next section"
+      >
+        <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 text-primary/50 group-hover:text-primary transition-colors duration-300" />
+      </button>
     </section>
   );
 };
