@@ -74,7 +74,7 @@ const About = () => {
             <div className="space-y-3">
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs block">Our Story</span>
               <span className="text-primary/60 font-medium tracking-[0.2em] uppercase text-[10px] block">Established 2021</span>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground leading-[1.1] max-w-[500px]">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground leading-[1.1] max-w-[650px]">
               Crafting <span className="text-gradient-gold">Unforgettable</span> Moments
             </h2>
             </div>
