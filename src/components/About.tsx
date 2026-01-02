@@ -17,7 +17,7 @@ const features = [
     icon: Music,
     title: "Live Music",
     description: "Soulful weekend performances",
-    image: "https://images.unsplash.com/photo-1514525253344-a813099ea1e1?auto=format&fit=crop&q=80&w=400"
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600"
   },
   {
     icon: Users,
