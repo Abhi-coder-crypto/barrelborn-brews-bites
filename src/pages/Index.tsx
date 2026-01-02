@@ -5,6 +5,7 @@ import MenuCategories from "@/components/MenuCategories";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
 import MapSection from "@/components/MapSection";
+import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -13,21 +14,12 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <div className="reveal">
-          <About />
-        </div>
-        <div className="reveal">
-          <MenuCategories />
-        </div>
-        <div className="reveal">
-          <Testimonials />
-        </div>
-        <div className="reveal">
-          <Gallery />
-        </div>
-        <div className="reveal">
-          <MapSection />
-        </div>
+        <About />
+        <MenuCategories />
+        <Testimonials />
+        <Gallery />
+        <MapSection />
+        <ContactForm />
       </main>
       <Footer />
     </div>
