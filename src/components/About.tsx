@@ -1,4 +1,28 @@
 import { Beer, Utensils, Music, Users } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+const LiquidReveal = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{ y, opacity, scale }}
+      className="w-full h-full"
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const features = [
   {
@@ -44,14 +68,16 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image Side */}
           <div className="relative group w-full reveal-left">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border/50 shadow-2xl">
-              <img 
-                src="/assets/our-story.jpg" 
-                alt="Barrelborn Interior" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            </div>
+            <LiquidReveal>
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border/50 shadow-2xl">
+                <img 
+                  src="/assets/our-story.jpg" 
+                  alt="Barrelborn Interior" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              </div>
+            </LiquidReveal>
             
             {/* Floating smaller image */}
             <div className="absolute -bottom-6 -right-6 w-2/5 aspect-square rounded-2xl overflow-hidden border-4 border-charcoal shadow-2xl hidden md:block">

@@ -7,10 +7,12 @@ import Gallery from "@/components/Gallery";
 import MapSection from "@/components/MapSection";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import { MouseGlow } from "@/components/Effects";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <MouseGlow />
       <Header />
       <main>
         <Hero />

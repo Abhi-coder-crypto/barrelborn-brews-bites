@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Magnetic } from "./Effects";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -41,48 +42,53 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <button 
-            onClick={() => handleNavClick("#home")}
-            className="flex items-center gap-3 group -mt-1"
-          >
-            <div className={`relative flex items-center justify-center rounded-full border-2 border-primary/30 overflow-hidden transition-all duration-300 group-hover:border-primary ${
-              isScrolled ? "w-12 h-12" : "w-16 h-16"
-            }`}>
-              <img 
-                src="/src/assets/logo.png" 
-                alt="BarrelBorn Logo" 
-                className="w-[85%] h-[85%] object-contain"
-              />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className={`font-display text-foreground tracking-wide transition-all duration-300 ${
-                isScrolled ? "text-lg" : "text-xl"
-              }`}>BARRELBORN</h1>
-              <p className="text-[10px] text-muted-foreground tracking-[0.25em]">DINE & DRAFT</p>
-            </div>
-          </button>
+          <Magnetic strength={0.3}>
+            <button 
+              onClick={() => handleNavClick("#home")}
+              className="flex items-center gap-3 group -mt-1"
+            >
+              <div className={`relative flex items-center justify-center rounded-full border-2 border-primary/30 overflow-hidden transition-all duration-300 group-hover:border-primary ${
+                isScrolled ? "w-12 h-12" : "w-16 h-16"
+              }`}>
+                <img 
+                  src="/src/assets/logo.png" 
+                  alt="BarrelBorn Logo" 
+                  className="w-[85%] h-[85%] object-contain"
+                />
+              </div>
+              <div className="hidden sm:block">
+                <h1 className={`font-display text-foreground tracking-wide transition-all duration-300 ${
+                  isScrolled ? "text-lg" : "text-xl"
+                }`}>BARRELBORN</h1>
+                <p className="text-[10px] text-muted-foreground tracking-[0.25em]">DINE & DRAFT</p>
+              </div>
+            </button>
+          </Magnetic>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-10 mx-auto">
             {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => handleNavClick(link.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 link-underline py-1"
-              >
-                {link.name}
-              </button>
+              <Magnetic key={link.name} strength={0.2}>
+                <button
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 link-underline py-1 px-2"
+                >
+                  {link.name}
+                </button>
+              </Magnetic>
             ))}
           </nav>
 
           <div className="hidden lg:block">
-            <Button
-              size="sm"
-              onClick={() => handleNavClick("#contact")}
-              className="btn-primary glow-gold px-6 py-5 text-sm rounded-full"
-            >
-              Reserve a Table
-            </Button>
+            <Magnetic strength={0.4}>
+              <Button
+                size="sm"
+                onClick={() => handleNavClick("#contact")}
+                className="btn-primary glow-gold px-6 py-5 text-sm rounded-full"
+              >
+                Reserve a Table
+              </Button>
+            </Magnetic>
           </div>
 
           {/* Mobile Menu Button */}

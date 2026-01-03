@@ -1,5 +1,32 @@
 import { ChevronDown, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Magnetic } from "./Effects";
+
+const ShatterText = ({ text }: { text: string }) => {
+  const characters = text.split("");
+  
+  return (
+    <div className="flex flex-wrap justify-center">
+      {characters.map((char, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 20, rotateX: 90 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: i * 0.05,
+            ease: [0.215, 0.61, 0.355, 1],
+          }}
+          className="inline-block hover:text-primary transition-colors duration-300 cursor-default"
+          style={{ whiteSpace: char === " " ? "pre" : "normal" }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </div>
+  );
+};
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -39,25 +66,27 @@ const Hero = () => {
       <div className="container relative z-10 px-4 sm:px-6 text-center flex flex-col items-center justify-center h-full pt-24 pb-20">
         {/* Logo Icon with Double Rings and Glow */}
         <div className="mb-6 animate-fade-up scale-90 sm:scale-100">
-          <div className="relative inline-flex items-center justify-center w-28 h-28 md:w-32 md:h-32">
-            {/* Outer Ring */}
-            <div className="absolute inset-0 rounded-full border border-primary/20 animate-[ping_3s_ease-in-out_infinite]" />
-            {/* Middle Ring */}
-            <div className="absolute inset-2 rounded-full border border-primary/40 animate-float" />
-            {/* Inner Ring & Glow */}
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary/20 to-transparent border border-primary/60 flex items-center justify-center backdrop-blur-sm shadow-[0_0_30px_rgba(201,169,98,0.3)] group">
-              <img 
-                src="/src/assets/logo.png" 
-                alt="BarrelBorn Logo" 
-                className="w-[85%] h-[85%] object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.6)]"
-              />
+          <Magnetic strength={0.5}>
+            <div className="relative inline-flex items-center justify-center w-28 h-28 md:w-32 md:h-32">
+              {/* Outer Ring */}
+              <div className="absolute inset-0 rounded-full border border-primary/20 animate-[ping_3s_ease-in-out_infinite]" />
+              {/* Middle Ring */}
+              <div className="absolute inset-2 rounded-full border border-primary/40 animate-float" />
+              {/* Inner Ring & Glow */}
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary/20 to-transparent border border-primary/60 flex items-center justify-center backdrop-blur-sm shadow-[0_0_30px_rgba(201,169,98,0.3)] group">
+                <img 
+                  src="/src/assets/logo.png" 
+                  alt="BarrelBorn Logo" 
+                  className="w-[85%] h-[85%] object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.6)]"
+                />
+              </div>
             </div>
-          </div>
+          </Magnetic>
         </div>
 
         {/* Main Title */}
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground mb-4 animate-fade-up animation-delay-200 tracking-tight leading-tight">
-          BARRELBORN
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground mb-4 tracking-tight leading-tight">
+          <ShatterText text="BARRELBORN" />
         </h1>
         
         <p className="text-sm sm:text-base md:text-lg tracking-[0.5em] text-primary font-bold mb-8 animate-fade-up animation-delay-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
@@ -70,13 +99,15 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 animate-fade-up animation-delay-500 w-full px-6 max-w-xl">
-          <Button
-            size="lg"
-            onClick={() => scrollToSection("menu")}
-            className="btn-primary glow-gold px-10 py-5 text-sm sm:text-base rounded-full"
-          >
-            Explore Our Menu
-          </Button>
+          <Magnetic strength={0.3}>
+            <Button
+              size="lg"
+              onClick={() => scrollToSection("menu")}
+              className="btn-primary glow-gold px-10 py-5 text-sm sm:text-base rounded-full"
+            >
+              Explore Our Menu
+            </Button>
+          </Magnetic>
         </div>
 
         {/* Rating & Location */}
