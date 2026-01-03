@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const ContactForm = () => {
   return (
-    <section id="contact" className="py-24 bg-charcoal relative overflow-hidden reveal">
+    <section id="contact" className="py-12 md:py-24 bg-charcoal relative overflow-hidden reveal">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px] animate-pulse" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-[120px]" />

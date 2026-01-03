@@ -24,7 +24,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 bg-charcoal relative overflow-hidden">
+    <section id="testimonials" className="py-12 md:py-24 bg-charcoal relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-4 right-4 lg:top-8 lg:right-8 text-primary/4">
         <Quote className="w-24 h-24 lg:w-32 lg:h-32" />
