@@ -63,7 +63,7 @@ const Header = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10 mr-auto ml-12">
+          <nav className="hidden lg:flex items-center gap-10 mx-auto">
             {navLinks.map((link) => (
               <button
                 key={link.name}
