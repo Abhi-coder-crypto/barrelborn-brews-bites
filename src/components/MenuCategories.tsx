@@ -110,38 +110,70 @@ const MenuCategories = () => {
           <div className="section-divider" />
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
+        <motion.div 
+          className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.2
+              }
+            }
+          }}
+        >
           {categories.map((category, index) => (
-            <TiltCard
+            <motion.div
               key={category.name}
-              className="group relative bg-card rounded-xl border border-border/40 overflow-hidden cursor-pointer reveal-scale"
+              variants={{
+                hidden: { opacity: 0, y: 50, rotateX: 45, scale: 0.9 },
+                show: { 
+                  opacity: 1, 
+                  y: 0, 
+                  rotateX: 0, 
+                  scale: 1,
+                  transition: {
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 12
+                  }
+                }
+              }}
             >
-              {/* Image Section */}
-              <div className="aspect-[16/10] overflow-hidden">
-                <img 
-                  src={category.image} 
-                  alt={category.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-              </div>
-
-              {/* Content Section */}
-              <div className="p-4 relative">
-                <div className="">
-                  <div className="flex justify-between items-center mb-1">
-                    <h3 className="font-display text-lg sm:text-xl text-foreground group-hover:text-primary transition-colors">
-                      {category.name}
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground text-xs line-clamp-2">
-                    {category.description}
-                  </p>
+              <TiltCard
+                className="group relative bg-card rounded-xl border border-border/40 overflow-hidden cursor-pointer h-full"
+              >
+                {/* Image Section */}
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img 
+                    src={category.image} 
+                    alt={category.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 </div>
-              </div>
-            </TiltCard>
+
+                {/* Content Section */}
+                <div className="p-4 relative">
+                  <div className="">
+                    <div className="flex justify-between items-center mb-1">
+                      <h3 className="font-display text-lg sm:text-xl text-foreground group-hover:text-primary transition-colors">
+                        {category.name}
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground text-xs line-clamp-2">
+                      {category.description}
+                    </p>
+                  </div>
+                </div>
+              </TiltCard>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="text-center mt-12">
           <button className="group inline-flex items-center gap-3 px-9 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full transition-all duration-300 font-medium">

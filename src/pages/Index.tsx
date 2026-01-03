@@ -7,11 +7,12 @@ import Gallery from "@/components/Gallery";
 import MapSection from "@/components/MapSection";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
-import { MouseGlow, GoldenDust } from "@/components/Effects";
+import { MouseGlow, GoldenDust, CondensationFilter } from "@/components/Effects";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <CondensationFilter />
       <GoldenDust />
       <MouseGlow />
       <Header />

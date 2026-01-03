@@ -39,11 +39,15 @@ export const Magnetic = ({ children, strength = 0.5 }: { children: React.ReactNo
 export const MouseGlow = () => {
   const mouseX = useSpring(0, { stiffness: 500, damping: 50 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 50 });
+  const [isHoveringImage, setIsHoveringImage] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
+      
+      const target = e.target as HTMLElement;
+      setIsHoveringImage(target.tagName === 'IMG' || target.tagName === 'VIDEO' || !!target.closest('.aspect-video, .aspect-square, .aspect-\\[16\\/10\\]'));
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
@@ -52,14 +56,22 @@ export const MouseGlow = () => {
   return (
     <motion.div
       className="fixed inset-0 pointer-events-none z-[60]"
-      style={{
-        background: `radial-gradient(1000px circle at var(--x) var(--y), rgba(201,169,98,0.1), transparent 80%)`,
-      } as any}
       animate={{
-        "--x": `${mouseX.get()}px`,
-        "--y": `${mouseY.get()}px`,
-      } as any}
+        background: isHoveringImage 
+          ? `radial-gradient(400px circle at ${mouseX.get()}px ${mouseY.get()}px, rgba(201,169,98,0.25), transparent 80%)`
+          : `radial-gradient(1000px circle at ${mouseX.get()}px ${mouseY.get()}px, rgba(201,169,98,0.1), transparent 80%)`,
+      }}
+      transition={{ duration: 0.3 }}
     />
+  );
+};
+
+export const CondensationFilter = () => {
+  return (
+    <div className="fixed inset-0 pointer-events-none z-[55] opacity-30 mix-blend-screen overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/glass-window.png')] opacity-20" />
+      <div className="absolute inset-0 shadow-[inset_0_0_200px_rgba(255,255,255,0.1)]" />
+    </div>
   );
 };
 
