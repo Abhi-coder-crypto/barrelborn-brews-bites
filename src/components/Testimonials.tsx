@@ -23,25 +23,25 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-12 bg-charcoal relative overflow-hidden reveal">
+    <section id="testimonials" className="py-6 bg-charcoal relative overflow-hidden reveal">
       {/* Decorative elements */}
-      <div className="absolute top-10 right-10 lg:top-20 lg:right-20 text-primary/4">
+      <div className="absolute top-4 right-4 lg:top-8 lg:right-8 text-primary/4">
         <Quote className="w-24 h-24 lg:w-32 lg:h-32" />
       </div>
-      <div className="absolute bottom-10 left-10 lg:bottom-20 lg:left-20 text-primary/4 rotate-180">
+      <div className="absolute bottom-4 left-4 lg:bottom-8 lg:left-8 text-primary/4 rotate-180">
         <Quote className="w-16 h-16 lg:w-24 lg:h-24" />
       </div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial opacity-30" />
 
       <div className="container relative z-10 px-4 sm:px-6">
         {/* Section Header */}
-        <div className="section-header">
+        <div className="section-header mb-4">
           <span className="section-label">Testimonials</span>
-          <h2 className="section-title">What Our Guests Say</h2>
+          <h2 className="section-title mt-2 mb-2">What Our Guests Say</h2>
           <div className="section-divider" />
         </div>
 
-        <div className="w-full overflow-hidden relative py-10">
+        <div className="w-full overflow-hidden relative py-4">
           <div className="flex animate-marquee-horizontal gap-6 w-max">
             {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
               <div
