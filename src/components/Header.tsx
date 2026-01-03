@@ -35,8 +35,8 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? "bg-background/95 backdrop-blur-lg border-b border-border/50 py-0.5" 
-          : "bg-background py-1"
+          ? "bg-background/95 backdrop-blur-lg border-b border-border/50 py-0" 
+          : "bg-background py-0"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6">
@@ -47,7 +47,7 @@ const Header = () => {
               onClick={() => handleNavClick("#home")}
               className="flex items-center group"
             >
-              <div className="relative flex items-center justify-center transition-all duration-300 w-24 h-24 md:w-32 md:h-32">
+              <div className="relative flex items-center justify-center transition-all duration-300 w-20 h-20 md:w-28 md:h-28">
                 <img 
                   src="/src/assets/logo.png" 
                   alt="BarrelBorn Logo" 
