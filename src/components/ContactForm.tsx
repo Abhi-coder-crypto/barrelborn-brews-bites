@@ -20,9 +20,9 @@ const ContactForm = () => {
 
           <div className="grid lg:grid-cols-5 gap-16 items-start">
             {/* Contact Info */}
-            <div className="lg:col-span-2 space-y-10">
+            <div className="lg:col-span-2 space-y-10 text-center lg:text-left">
               <div className="space-y-8">
-                <div className="flex items-start gap-6 group">
+                <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 group">
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-primary/5">
                     <Phone className="w-7 h-7 text-primary" />
                   </div>
@@ -32,7 +32,7 @@ const ContactForm = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-6 group">
+                <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 group">
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-primary/5">
                     <Mail className="w-7 h-7 text-primary" />
                   </div>
@@ -42,7 +42,7 @@ const ContactForm = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-6 group">
+                <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 group">
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-primary/5">
                     <MapPin className="w-7 h-7 text-primary" />
                   </div>
@@ -54,8 +54,8 @@ const ContactForm = () => {
               </div>
 
               <div className="p-10 rounded-3xl border border-primary/20 bg-card/40 backdrop-blur-md shadow-xl relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-2 h-full bg-primary/50" />
-                <h4 className="font-display text-2xl mb-6 flex items-center gap-3">
+                <div className="absolute top-0 left-0 w-full lg:w-2 h-2 lg:h-full bg-primary/50" />
+                <h4 className="font-display text-2xl mb-6 flex items-center justify-center lg:justify-start gap-3">
                   <Clock className="w-6 h-6 text-primary" />
                   Opening Hours
                 </h4>

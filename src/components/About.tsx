@@ -97,19 +97,19 @@ const About = () => {
           </div>
 
           {/* Text Content */}
-          <div className="flex flex-col justify-center space-y-8 reveal-right">
+          <div className="flex flex-col justify-center space-y-8 reveal-right text-center lg:text-left">
             <div className="space-y-3">
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs block">Our Story</span>
               <span className="text-primary/60 font-medium tracking-[0.2em] uppercase text-[10px] block">Established 2021</span>
             <GlitchReveal>
-              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground leading-[1.1] max-w-[650px]">
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground leading-[1.1] max-w-[650px] mx-auto lg:mx-0">
                 Crafting <span className="text-gradient-gold">Unforgettable</span> Moments
               </h2>
             </GlitchReveal>
             </div>
             
             <div className="space-y-6">
-              <p className="text-lg sm:text-xl text-foreground/90 leading-relaxed font-light italic border-l-2 border-primary/30 pl-6">
+              <p className="text-lg sm:text-xl text-foreground/90 leading-relaxed font-light italic border-l-2 lg:border-l-2 border-primary/30 pl-6 lg:pl-6 border-l-0 lg:border-l-2 mx-auto lg:mx-0">
                 "Every barrel has a story. At Barrelborn, we help you write yours over exceptional brews and world-class cuisine."
               </p>
               
@@ -134,7 +134,7 @@ const About = () => {
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
                     
                     {/* Content */}
-                    <div className="relative z-10 p-4 h-full flex flex-col justify-start items-start text-left">
+                    <div className="relative z-10 p-4 h-full flex flex-col justify-center items-center text-center">
                       <h4 className="font-display text-foreground text-[10px] font-bold uppercase tracking-[0.2em]">{feature.title}</h4>
                     </div>
                   </div>

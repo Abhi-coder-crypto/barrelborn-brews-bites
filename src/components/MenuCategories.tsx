@@ -158,9 +158,9 @@ const MenuCategories = () => {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-4 relative">
+                <div className="p-4 relative text-center">
                   <div className="">
-                    <div className="flex justify-between items-center mb-1">
+                    <div className="flex justify-center items-center mb-1">
                       <h3 className="font-display text-lg sm:text-xl text-foreground group-hover:text-primary transition-colors">
                         {category.name}
                       </h3>
