@@ -37,10 +37,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden pt-[80px]"
+      className="relative min-h-[85vh] md:h-screen w-full flex items-center justify-center overflow-hidden pt-[60px] md:pt-[80px]"
     >
       {/* Background Video - Scoped strictly below the header */}
-      <div className="absolute inset-0 top-[80px] h-[calc(100vh-80px)] w-full pointer-events-none z-0">
+      <div className="absolute inset-0 top-[60px] md:top-[80px] h-[calc(100vh-60px)] md:h-[calc(100vh-80px)] w-full pointer-events-none z-0">
         <video
           autoPlay
           muted
@@ -60,14 +60,14 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-radial opacity-40 z-[1] pointer-events-none" />
       
       {/* Animated glow orbs */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[150px] animate-glow-pulse" />
-      <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-gold-light/5 blur-[120px] animate-glow-pulse animation-delay-200" />
+      <div className="absolute top-1/3 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-primary/8 blur-[100px] md:blur-[150px] animate-glow-pulse" />
+      <div className="absolute bottom-1/3 right-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-gold-light/5 blur-[80px] md:blur-[120px] animate-glow-pulse animation-delay-200" />
 
-      <div className="container relative z-10 px-4 sm:px-6 text-center flex flex-col items-center justify-center h-full pt-24 pb-20">
-        {/* Logo Icon with Double Rings and Glow */}
-        <div className="mb-6 animate-fade-up scale-90 sm:scale-100">
+      <div className="container relative z-10 px-4 sm:px-6 text-center flex flex-col items-center justify-center h-full pt-12 md:pt-24 pb-16 md:pb-20">
+        {/* Logo Container */}
+        <div className="mb-4 md:mb-6 animate-fade-up scale-75 sm:scale-90 md:scale-100">
           <Magnetic strength={0.5}>
-            <div className="relative inline-flex items-center justify-center w-28 h-28 md:w-32 md:h-32">
+            <div className="relative inline-flex items-center justify-center w-24 h-24 md:w-32 md:h-32">
               {/* Outer Ring */}
               <div className="absolute inset-0 rounded-full border border-primary/20 animate-[ping_3s_ease-in-out_infinite]" />
               {/* Middle Ring */}
@@ -85,25 +85,25 @@ const Hero = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground mb-4 tracking-tight leading-tight">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-foreground mb-3 md:mb-4 tracking-tight leading-tight">
           <ShatterText text="BARRELBORN" />
         </h1>
         
-        <p className="text-xs sm:text-sm md:text-base tracking-[0.5em] text-primary font-bold mb-6 animate-fade-up animation-delay-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+        <p className="text-[10px] sm:text-xs md:text-base tracking-[0.4em] md:tracking-[0.5em] text-primary font-bold mb-4 md:mb-6 animate-fade-up animation-delay-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
           DINE & DRAFT
         </p>
 
-        <p className="max-w-md mx-auto text-muted-foreground text-xs sm:text-sm md:text-base leading-relaxed mb-8 animate-fade-up animation-delay-400 px-4">
+        <p className="max-w-xs md:max-w-md mx-auto text-muted-foreground text-[11px] sm:text-xs md:text-base leading-relaxed mb-6 md:mb-8 animate-fade-up animation-delay-400 px-4">
           Where the city chills. Crafted beers, artisan cocktails, and culinary excellence in the heart of Thane
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 animate-fade-up animation-delay-500 w-full px-6 max-w-xl">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 md:mb-10 animate-fade-up animation-delay-500 w-full px-8 max-w-xl">
           <Magnetic strength={0.3}>
             <Button
               size="lg"
               onClick={() => scrollToSection("menu")}
-              className="btn-primary glow-gold px-10 py-5 text-sm sm:text-base rounded-full"
+              className="btn-primary glow-gold px-8 md:px-10 py-4 md:py-5 text-xs sm:text-sm md:text-base rounded-full w-full sm:w-auto"
             >
               Explore Our Menu
             </Button>
