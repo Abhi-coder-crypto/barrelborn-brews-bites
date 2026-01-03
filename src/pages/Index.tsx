@@ -7,21 +7,36 @@ import Gallery from "@/components/Gallery";
 import MapSection from "@/components/MapSection";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import BeerBottle from "@/components/BeerBottle";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-background">
+      <BeerBottle />
       <Header />
       <main>
-        <Hero />
-        <About />
-        <MenuCategories />
-        <Testimonials />
-        <Gallery />
-        <MapSection />
-        <ContactForm />
+        <section className="snap-start h-screen">
+          <Hero />
+        </section>
+        <section className="snap-start h-screen">
+          <About />
+        </section>
+        <section className="snap-start h-screen">
+          <MenuCategories />
+        </section>
+        <section className="snap-start h-screen overflow-hidden">
+          <Gallery />
+        </section>
+        <section className="snap-start h-screen">
+          <MapSection />
+        </section>
+        <section className="snap-start h-screen">
+          <ContactForm />
+        </section>
       </main>
-      <Footer />
+      <section className="snap-start">
+        <Footer />
+      </section>
     </div>
   );
 };
