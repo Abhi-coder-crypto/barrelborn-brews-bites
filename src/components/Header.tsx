@@ -3,6 +3,8 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Magnetic } from "./Effects";
 
+import logo from "@/assets/logo.png";
+
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
@@ -49,7 +51,7 @@ const Header = () => {
             >
               <div className="relative flex items-center justify-center transition-all duration-300 w-32 h-32 md:w-40 md:h-40 -my-8 md:-my-10 pointer-events-auto">
                 <img 
-                  src="/src/assets/logo.png" 
+                  src={logo} 
                   alt="BarrelBorn Logo" 
                   className="w-full h-full object-contain drop-shadow-2xl"
                 />

@@ -1,8 +1,10 @@
 import { ChevronDown, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { Magnetic } from "./Effects";
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo.png";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const TypewriterText = ({ text, className }: { text: string; className?: string }) => {
   const [displayText, setDisplayText] = useState("");
@@ -91,7 +93,7 @@ const Hero = () => {
           playsInline
           className="h-full w-full object-cover"
         >
-          <source src="/src/assets/hero-video.mp4" type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
         </video>
         {/* Dark overlay scoped only to the video area */}
         <div className="absolute inset-0 bg-black/60" />
@@ -113,7 +115,7 @@ const Hero = () => {
             {/* Inner Ring & Glow */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-transparent border border-primary/60 flex items-center justify-center backdrop-blur-sm shadow-[0_0_40px_rgba(201,169,98,0.4)]">
               <img 
-                src="/src/assets/logo.png" 
+                src={logo} 
                 alt="BarrelBorn Logo" 
                 className="w-[85%] h-[85%] object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.8)]"
               />

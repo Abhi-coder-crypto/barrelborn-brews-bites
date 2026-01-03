@@ -3,6 +3,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { GlitchReveal } from "./Transitions";
 
+import interiorImg from "@/assets/gallery-interior.jpg";
+import cocktailImg from "@/assets/gallery-cocktail.jpg";
+import craftedBeersImg from "@/assets/crafted-beers.jpg";
+import gourmetCuisineImg from "@/assets/gourmet-cuisine.jpg";
+
 const LiquidReveal = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -30,13 +35,13 @@ const features = [
     icon: Beer,
     title: "Crafted Beers",
     description: "Exclusive selection of handcrafted beers",
-    image: "/src/assets/crafted-beers.jpg"
+    image: craftedBeersImg
   },
   {
     icon: Utensils,
     title: "Gourmet Cuisine",
     description: "Fusion of global flavors",
-    image: "/src/assets/gourmet-cuisine.jpg"
+    image: gourmetCuisineImg
   },
   {
     icon: Music,
@@ -72,7 +77,7 @@ const About = () => {
             <LiquidReveal>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border/50 shadow-2xl">
                 <img 
-                  src="/src/assets/gallery-interior.jpg" 
+                  src={interiorImg} 
                   alt="Barrelborn Interior" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -83,7 +88,7 @@ const About = () => {
             {/* Floating smaller image */}
             <div className="absolute -bottom-6 -right-6 w-2/5 aspect-square rounded-2xl overflow-hidden border-4 border-charcoal shadow-2xl hidden md:block">
               <img 
-                src="/src/assets/gallery-cocktail.jpg" 
+                src={cocktailImg} 
                 alt="Craft Cocktails" 
                 className="w-full h-full object-cover"
               />

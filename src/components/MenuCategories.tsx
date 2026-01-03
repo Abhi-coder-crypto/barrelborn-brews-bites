@@ -2,6 +2,13 @@ import { Beer, Wine, Utensils, GlassWater, IceCream, Martini, ArrowRight } from 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import React from "react";
 
+import beerImg from "@/assets/gallery-beer.jpg";
+import foodImg from "@/assets/gallery-food.jpg";
+import cocktailImg from "@/assets/gallery-cocktail.jpg";
+import barImg from "@/assets/gallery-private.jpg";
+import mocktailImg from "@/assets/crafted-beers.jpg";
+import dessertImg from "@/assets/gallery-food.jpg";
+
 const TiltCard = ({ children, className }: { children: React.ReactNode, className?: string }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -58,42 +65,42 @@ const categories = [
     name: "Food",
     description: "Gourmet dishes & bar bites crafted by our chefs",
     items: "25+ dishes",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=400&auto=format&fit=crop"
+    image: foodImg
   },
   {
     icon: Beer,
     name: "Crafted Beer",
     description: "Exclusive brews on tap, barrel-aged to perfection",
     items: "15+ varieties",
-    image: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?q=80&w=400&auto=format&fit=crop"
+    image: beerImg
   },
   {
     icon: Martini,
     name: "Cocktails",
     description: "Signature mixed drinks with premium spirits",
     items: "20+ creations",
-    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=400&auto=format&fit=crop"
+    image: cocktailImg
   },
   {
     icon: Wine,
     name: "Bar",
     description: "Premium spirits, wines & imported selections",
     items: "40+ options",
-    image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=400&auto=format&fit=crop"
+    image: barImg
   },
   {
     icon: GlassWater,
     name: "Mocktails",
     description: "Refreshing non-alcoholic crafted beverages",
     items: "12+ flavors",
-    image: "https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=400&auto=format&fit=crop"
+    image: mocktailImg
   },
   {
     icon: IceCream,
     name: "Desserts",
     description: "Sweet endings to complete your experience",
     items: "10+ treats",
-    image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=400&auto=format&fit=crop"
+    image: dessertImg
   },
 ];
 
