@@ -63,7 +63,7 @@ const Header = () => {
               <Magnetic key={link.name} strength={0.2}>
                 <button
                   onClick={() => handleNavClick(link.href)}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 link-underline py-1 px-2"
+                  className="text-base font-semibold text-muted-foreground hover:text-primary transition-colors duration-300 link-underline py-1 px-2"
                 >
                   {link.name}
                 </button>
