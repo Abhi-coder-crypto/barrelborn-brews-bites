@@ -48,7 +48,7 @@ const Header = () => {
               className="flex items-center group -mt-1"
             >
               <div className={`relative flex items-center justify-center rounded-full border-2 border-primary/30 overflow-hidden transition-all duration-300 group-hover:border-primary ${
-                isScrolled ? "w-12 h-12" : "w-16 h-16"
+                isScrolled ? "w-14 h-14" : "w-20 h-20"
               }`}>
                 <img 
                   src="/src/assets/logo.png" 
