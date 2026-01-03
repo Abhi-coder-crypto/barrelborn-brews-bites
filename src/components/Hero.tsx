@@ -1,7 +1,50 @@
 import { ChevronDown, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Magnetic } from "./Effects";
+import { useEffect, useState } from "react";
+
+const TypewriterText = ({ text, className }: { text: string; className?: string }) => {
+  const [displayText, setDisplayText] = useState("");
+  const [phase, setPhase] = useState<"typing" | "deleting" | "pausing">("typing");
+  
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    
+    if (phase === "typing") {
+      if (displayText.length < text.length) {
+        timeout = setTimeout(() => {
+          setDisplayText(text.substring(0, displayText.length + 1));
+        }, 50);
+      } else {
+        timeout = setTimeout(() => setPhase("pausing"), 3000);
+      }
+    } else if (phase === "pausing") {
+      timeout = setTimeout(() => setPhase("deleting"), 2000);
+    } else if (phase === "deleting") {
+      if (displayText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayText(text.substring(0, displayText.length - 1));
+        }, 30);
+      } else {
+        setPhase("typing");
+      }
+    }
+    
+    return () => clearTimeout(timeout);
+  }, [displayText, phase, text]);
+
+  return (
+    <span className={className}>
+      {displayText}
+      <motion.span
+        animate={{ opacity: [1, 0] }}
+        transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+        className="inline-block w-[2px] h-[1em] bg-primary ml-1 align-middle"
+      />
+    </span>
+  );
+};
 
 const ShatterText = ({ text }: { text: string }) => {
   const characters = text.split("");
@@ -87,8 +130,8 @@ const Hero = () => {
           DINE & DRAFT
         </p>
 
-        <p className="max-w-sm md:max-w-2xl mx-auto text-white text-sm sm:text-base md:text-xl leading-relaxed mb-10 animate-fade-up animation-delay-400 px-6 font-medium drop-shadow-lg">
-          Where the city chills. Crafted beers, artisan cocktails, and culinary excellence in the heart of Thane
+        <p className="max-w-sm md:max-w-2xl mx-auto text-white text-sm sm:text-base md:text-xl leading-relaxed mb-10 animate-fade-up animation-delay-400 px-6 font-medium drop-shadow-lg min-h-[3em]">
+          <TypewriterText text="Where the city chills. Crafted beers, artisan cocktails, and culinary excellence in the heart of Thane" />
         </p>
 
         {/* CTA Buttons */}
