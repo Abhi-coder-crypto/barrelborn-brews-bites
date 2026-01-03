@@ -35,11 +35,11 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? "bg-background/95 backdrop-blur-lg border-b border-border/50 min-h-12 md:min-h-14" 
-          : "bg-background min-h-14 md:min-h-20"
+          ? "bg-background/95 backdrop-blur-lg border-b border-border/50" 
+          : "bg-background"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 py-2 md:py-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Magnetic strength={0.3}>
@@ -47,7 +47,7 @@ const Header = () => {
               onClick={() => handleNavClick("#home")}
               className="flex items-center group relative z-10"
             >
-              <div className="relative flex items-center justify-center transition-all duration-300 w-16 h-16 md:w-24 md:h-24">
+              <div className="relative flex items-center justify-center transition-all duration-300 w-24 h-24 md:w-32 md:h-32">
                 <img 
                   src="/src/assets/logo.png" 
                   alt="BarrelBorn Logo" 
