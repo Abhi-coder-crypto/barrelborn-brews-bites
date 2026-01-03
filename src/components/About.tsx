@@ -30,13 +30,13 @@ const features = [
     icon: Beer,
     title: "Crafted Beers",
     description: "Exclusive selection of handcrafted beers",
-    image: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&q=80&w=400"
+    image: "/src/assets/crafted-beers.jpg"
   },
   {
     icon: Utensils,
     title: "Gourmet Cuisine",
     description: "Fusion of global flavors",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400"
+    image: "/src/assets/gourmet-cuisine.jpg"
   },
   {
     icon: Music,
