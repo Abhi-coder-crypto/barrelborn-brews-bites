@@ -53,12 +53,42 @@ export const MouseGlow = () => {
     <motion.div
       className="fixed inset-0 pointer-events-none z-[60]"
       style={{
-        background: `radial-gradient(600px circle at var(--x) var(--y), rgba(201,169,98,0.05), transparent 80%)`,
+        background: `radial-gradient(1000px circle at var(--x) var(--y), rgba(201,169,98,0.1), transparent 80%)`,
       } as any}
       animate={{
         "--x": `${mouseX.get()}px`,
         "--y": `${mouseY.get()}px`,
       } as any}
     />
+  );
+};
+
+export const GoldenDust = () => {
+  return (
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      {[...Array(20)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 bg-primary/20 rounded-full"
+          initial={{
+            x: Math.random() * 100 + "%",
+            y: Math.random() * 100 + "%",
+            opacity: Math.random(),
+            scale: Math.random() * 0.5 + 0.5,
+          }}
+          animate={{
+            y: [null, "-100vh"],
+            x: [null, (Math.random() - 0.5) * 200 + "px"],
+            opacity: [0, 0.4, 0],
+          }}
+          transition={{
+            duration: Math.random() * 10 + 20,
+            repeat: Infinity,
+            ease: "linear",
+            delay: Math.random() * 20,
+          }}
+        />
+      ))}
+    </div>
   );
 };
