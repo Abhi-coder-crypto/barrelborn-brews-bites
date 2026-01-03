@@ -51,7 +51,7 @@ const Hero = () => {
           <source src="/src/assets/hero-video.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay scoped only to the video area */}
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Background layers */}
