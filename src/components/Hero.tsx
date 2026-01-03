@@ -64,30 +64,37 @@ const Hero = () => {
       <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-gold-light/5 blur-[120px] animate-glow-pulse animation-delay-200" />
 
       <div className="container relative z-10 px-4 sm:px-6 text-center flex flex-col items-center justify-center h-full pt-24 pb-20">
-        {/* Logo Container - Enlarged to be the main focus */}
-        <div className="mb-8 animate-fade-up scale-110 sm:scale-125">
-          <Magnetic strength={0.4}>
-            <div className="relative inline-flex items-center justify-center w-56 h-56 md:w-72 md:h-72">
-              {/* Outer Glow Ring */}
-              <div className="absolute inset-0 rounded-full border border-primary/20 animate-[pulse_4s_ease-in-out_infinite] blur-sm" />
-              {/* Floating Ring */}
-              <div className="absolute inset-4 rounded-full border border-primary/10 animate-float" />
-              
-              {/* Central Logo Content */}
-              <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+        {/* Logo Icon with Double Rings and Glow */}
+        <div className="mb-6 animate-fade-up scale-90 sm:scale-100">
+          <Magnetic strength={0.5}>
+            <div className="relative inline-flex items-center justify-center w-28 h-28 md:w-32 md:h-32">
+              {/* Outer Ring */}
+              <div className="absolute inset-0 rounded-full border border-primary/20 animate-[ping_3s_ease-in-out_infinite]" />
+              {/* Middle Ring */}
+              <div className="absolute inset-2 rounded-full border border-primary/40 animate-float" />
+              {/* Inner Ring & Glow */}
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary/20 to-transparent border border-primary/60 flex items-center justify-center backdrop-blur-sm shadow-[0_0_30px_rgba(201,169,98,0.3)] group">
                 <img 
                   src="/src/assets/logo.png" 
                   alt="BarrelBorn Logo" 
-                  className="w-[95%] h-[95%] object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                  className="w-[85%] h-[85%] object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.6)]"
                 />
               </div>
             </div>
           </Magnetic>
         </div>
 
-        {/* Minimal Subtitle */}
-        <p className="text-sm sm:text-base md:text-lg tracking-[0.6em] text-primary font-bold mb-12 animate-fade-up animation-delay-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] uppercase">
-          Dine & Draft
+        {/* Main Title */}
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground mb-4 tracking-tight leading-tight">
+          <ShatterText text="BARRELBORN" />
+        </h1>
+        
+        <p className="text-sm sm:text-base md:text-lg tracking-[0.5em] text-primary font-bold mb-8 animate-fade-up animation-delay-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          DINE & DRAFT
+        </p>
+
+        <p className="max-w-md mx-auto text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-8 animate-fade-up animation-delay-400 px-4">
+          Where the city chills. Crafted beers, artisan cocktails, and culinary excellence in the heart of Thane
         </p>
 
         {/* CTA Buttons */}
@@ -96,9 +103,9 @@ const Hero = () => {
             <Button
               size="lg"
               onClick={() => scrollToSection("menu")}
-              className="btn-primary glow-gold px-12 py-6 text-sm sm:text-base rounded-full uppercase tracking-widest font-bold"
+              className="btn-primary glow-gold px-10 py-5 text-sm sm:text-base rounded-full"
             >
-              Discover
+              Explore Our Menu
             </Button>
           </Magnetic>
         </div>
