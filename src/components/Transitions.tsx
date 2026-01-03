@@ -37,6 +37,7 @@ export const GlitchReveal = ({ children }: { children: React.ReactNode }) => {
     <motion.div
       initial={{ clipPath: "inset(100% 0 0 0)" }}
       whileInView={{ clipPath: "inset(0% 0 0 0)" }}
+      viewport={{ once: false, amount: 0.1 }}
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       className="relative"
     >
