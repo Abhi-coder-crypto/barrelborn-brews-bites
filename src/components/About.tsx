@@ -40,7 +40,7 @@ const About = () => {
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[150px]" />
       
-      <div className="container relative z-10 px-4 sm:px-6">
+      <div className="container relative z-10 px-8 sm:px-12 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image Side */}
           <div className="relative group w-full reveal-left">
