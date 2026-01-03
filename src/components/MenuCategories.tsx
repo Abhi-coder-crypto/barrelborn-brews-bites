@@ -176,7 +176,10 @@ const MenuCategories = () => {
         </motion.div>
 
         <div className="text-center mt-12">
-          <button className="group inline-flex items-center gap-3 px-9 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full transition-all duration-300 font-medium">
+          <button 
+            onClick={() => window.open("https://barrel-born.vercel.app/", "_blank")}
+            className="group inline-flex items-center gap-3 px-9 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full transition-all duration-300 font-medium"
+          >
             <span>View Full Menu</span>
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
