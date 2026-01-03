@@ -72,7 +72,7 @@ const About = () => {
             <LiquidReveal>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border/50 shadow-2xl">
                 <img 
-                  src="/assets/our-story.jpg" 
+                  src="/src/assets/gallery-interior.jpg" 
                   alt="Barrelborn Interior" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

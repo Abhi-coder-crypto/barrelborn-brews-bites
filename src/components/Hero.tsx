@@ -63,11 +63,11 @@ const Hero = () => {
       <div className="absolute top-1/3 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-primary/8 blur-[100px] md:blur-[150px] animate-glow-pulse" />
       <div className="absolute bottom-1/3 right-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-gold-light/5 blur-[80px] md:blur-[120px] animate-glow-pulse animation-delay-200" />
 
-      <div className="container relative z-10 px-4 sm:px-6 text-center flex flex-col items-center justify-center h-full pt-16 md:pt-24 pb-16 md:pb-20">
+      <div className="container relative z-10 px-4 sm:px-6 text-center flex flex-col items-center justify-center h-full pt-20 md:pt-24 pb-16 md:pb-20">
         {/* Logo Container */}
-        <div className="mb-6 md:mb-6 animate-fade-up scale-100 sm:scale-90 md:scale-100">
+        <div className="mb-6 md:mb-6 animate-fade-up scale-125 sm:scale-110 md:scale-125">
           <Magnetic strength={0.5}>
-            <div className="relative inline-flex items-center justify-center w-28 h-28 md:w-32 md:h-32">
+            <div className="relative inline-flex items-center justify-center w-32 h-32 md:w-40 md:h-40">
               {/* Outer Ring */}
               <div className="absolute inset-0 rounded-full border border-primary/20 animate-[ping_3s_ease-in-out_infinite]" />
               {/* Middle Ring */}

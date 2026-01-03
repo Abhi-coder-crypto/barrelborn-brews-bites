@@ -47,7 +47,7 @@ const Header = () => {
               onClick={() => handleNavClick("#home")}
               className="flex items-center group relative z-10"
             >
-              <div className="relative flex items-center justify-center transition-all duration-300 w-36 h-36 md:w-32 md:h-32 -my-8 md:-my-3">
+              <div className="relative flex items-center justify-center transition-all duration-300 w-36 h-36 md:w-40 md:h-40 -my-8 md:-my-10">
                 <img 
                   src="/src/assets/logo.png" 
                   alt="BarrelBorn Logo" 
