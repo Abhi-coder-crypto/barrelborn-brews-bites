@@ -26,7 +26,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-20 h-20 rounded-full border-2 border-primary/30 flex items-center justify-center overflow-hidden shadow-lg shadow-primary/5">
+              <div className="w-16 h-16 rounded-full border-2 border-primary/30 flex items-center justify-center overflow-hidden shadow-lg shadow-primary/5">
                 <img 
                   src="/src/assets/logo.png" 
                   alt="BarrelBorn Logo" 
