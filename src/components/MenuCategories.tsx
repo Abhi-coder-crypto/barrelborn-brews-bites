@@ -1,4 +1,56 @@
 import { Beer, Wine, Utensils, GlassWater, IceCream, Martini, ArrowRight } from "lucide-react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import React from "react";
+
+const TiltCard = ({ children, className }: { children: React.ReactNode, className?: string }) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateY,
+        rotateX,
+        transformStyle: "preserve-3d",
+      }}
+      className={className}
+    >
+      <div
+        style={{
+          transform: "translateZ(75px)",
+          transformStyle: "preserve-3d",
+        }}
+      >
+        {children}
+      </div>
+    </motion.div>
+  );
+};
 
 const categories = [
   {
@@ -60,10 +112,9 @@ const MenuCategories = () => {
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {categories.map((category, index) => (
-            <div
+            <TiltCard
               key={category.name}
-              className="group relative bg-card rounded-xl border border-border/40 overflow-hidden hover-elevate cursor-pointer reveal-scale"
-              style={{ transitionDelay: `${index * 100}ms` }}
+              className="group relative bg-card rounded-xl border border-border/40 overflow-hidden cursor-pointer reveal-scale"
             >
               {/* Image Section */}
               <div className="aspect-[16/10] overflow-hidden">
@@ -88,7 +139,7 @@ const MenuCategories = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
 
