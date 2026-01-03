@@ -93,7 +93,7 @@ const Hero = () => {
           DINE & DRAFT
         </p>
 
-        <p className="max-w-xs md:max-w-md mx-auto text-muted-foreground text-[11px] sm:text-xs md:text-base leading-relaxed mb-6 md:mb-8 animate-fade-up animation-delay-400 px-4">
+        <p className="max-w-xs md:max-w-md mx-auto text-muted-foreground text-[13px] sm:text-sm md:text-base leading-relaxed mb-6 md:mb-8 animate-fade-up animation-delay-400 px-4">
           Where the city chills. Crafted beers, artisan cocktails, and culinary excellence in the heart of Thane
         </p>
 
@@ -103,7 +103,7 @@ const Hero = () => {
             <Button
               size="lg"
               onClick={() => window.open("https://barrel-born.vercel.app/", "_blank")}
-              className="btn-primary glow-gold px-8 md:px-10 py-4 md:py-5 text-xs sm:text-sm md:text-base rounded-full w-full sm:w-auto"
+              className="btn-primary glow-gold px-8 md:px-10 py-4 md:py-5 text-[11px] sm:text-sm md:text-base rounded-full w-full sm:w-auto"
             >
               Explore Our Menu
             </Button>
@@ -116,18 +116,18 @@ const Hero = () => {
             href="https://www.google.com/search?sca_esv=7dcbc37479457eb0&sxsrf=AE3TifOlTeAcP_gEowkoFv3R5BVqDq4fTQ:1767374245174&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E9moAMXsS0ppftIa0AAstM7PU3IPOsk0_n4z2GibB7zwuuqJ_Zbkf-8VublAkI9bQoriLtiFfWv2pIsrhadjPCDP3j-pqozS1djY7fZfyFv3bCDwwiVEvOcINNV4GJ6DdbUIl5o%3D&q=Barrelborn+%7C+Dine+%26+Draft+%7C+Thane+Reviews&sa=X&ved=2ahUKEwjWkcaQru2RAxXekq8BHaEaJlYQ0bkNegQIKhAE&biw=1280&bih=632&dpr=1.5"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 group hover:text-primary transition-colors"
+            className="flex items-center gap-2 group hover:text-primary transition-colors scale-90 sm:scale-100"
           >
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
                 <Star 
                   key={i} 
-                  className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-primary text-primary transition-transform duration-300 group-hover:scale-110" 
+                  className="w-3 h-3 sm:w-4 sm:h-4 fill-primary text-primary transition-transform duration-300 group-hover:scale-110" 
                   style={{ transitionDelay: `${i * 50}ms` }}
                 />
               ))}
             </div>
-            <span className="text-xs sm:text-sm font-medium">4.8 on Google</span>
+            <span className="text-[11px] sm:text-sm font-medium">4.8 on Google</span>
           </a>
           <div className="hidden sm:block w-px h-4 bg-border" />
           <div className="flex items-center gap-2 group">
