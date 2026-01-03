@@ -73,16 +73,9 @@ const Hero = () => {
           <Button
             size="lg"
             onClick={() => scrollToSection("menu")}
-            className="btn-outline px-6 py-5 text-sm sm:text-base rounded-full w-full sm:w-auto min-w-[180px]"
+            className="btn-primary glow-gold px-10 py-5 text-sm sm:text-base rounded-full"
           >
             Explore Our Menu
-          </Button>
-          <Button
-            size="lg"
-            onClick={() => scrollToSection("contact")}
-            className="btn-primary glow-gold px-6 py-5 text-sm sm:text-base rounded-full w-full sm:w-auto min-w-[180px]"
-          >
-            Reserve a Table
           </Button>
         </div>
 
