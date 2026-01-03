@@ -102,7 +102,7 @@ const Hero = () => {
           <Magnetic strength={0.3}>
             <Button
               size="lg"
-              onClick={() => scrollToSection("menu")}
+              onClick={() => window.open("https://barrel-born.vercel.app/", "_blank")}
               className="btn-primary glow-gold px-8 md:px-10 py-4 md:py-5 text-xs sm:text-sm md:text-base rounded-full w-full sm:w-auto"
             >
               Explore Our Menu
