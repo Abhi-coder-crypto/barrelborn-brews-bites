@@ -47,13 +47,13 @@ const Header = () => {
               onClick={() => handleNavClick("#home")}
               className="flex items-center group -mt-1"
             >
-              <div className={`relative flex items-center justify-center rounded-full border-2 border-primary/30 overflow-hidden transition-all duration-300 group-hover:border-primary ${
-                isScrolled ? "w-14 h-14" : "w-20 h-20"
+              <div className={`relative flex items-center justify-center transition-all duration-300 ${
+                isScrolled ? "w-16 h-16" : "w-24 h-24"
               }`}>
                 <img 
                   src="/src/assets/logo.png" 
                   alt="BarrelBorn Logo" 
-                  className="w-[85%] h-[85%] object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </button>
