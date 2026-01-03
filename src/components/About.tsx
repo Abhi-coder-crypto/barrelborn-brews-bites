@@ -42,13 +42,13 @@ const features = [
     icon: Music,
     title: "Live Music",
     description: "Soulful weekend performances",
-    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600"
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=400"
   },
   {
     icon: Users,
     title: "Private Events",
     description: "Exclusive spaces for gatherings",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=600"
+    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=400"
   },
 ];
 
