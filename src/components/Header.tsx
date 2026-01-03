@@ -43,7 +43,7 @@ const Header = () => {
           {/* Logo */}
           <button 
             onClick={() => handleNavClick("#home")}
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-3 group -mt-1"
           >
             <div className={`relative flex items-center justify-center rounded-full border-2 border-primary/30 overflow-hidden transition-all duration-300 group-hover:border-primary ${
               isScrolled ? "w-12 h-12" : "w-16 h-16"
