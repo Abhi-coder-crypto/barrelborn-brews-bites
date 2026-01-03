@@ -45,8 +45,12 @@ const Hero = () => {
             {/* Middle Ring */}
             <div className="absolute inset-2 rounded-full border border-primary/40 animate-float" />
             {/* Inner Ring & Glow */}
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary/20 to-transparent border border-primary/60 flex items-center justify-center backdrop-blur-sm shadow-[0_0_30px_rgba(201,169,98,0.3)] group">
-              <span className="font-display text-4xl md:text-5xl text-gradient-gold drop-shadow-[0_0_15px_rgba(212,175,55,0.6)]">B</span>
+            <div className="absolute inset-4 flex items-center justify-center backdrop-blur-sm shadow-[0_0_30px_rgba(201,169,98,0.3)] group">
+              <img 
+                src="/src/assets/logo.png" 
+                alt="BarrelBorn Logo" 
+                className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.6)]"
+              />
             </div>
           </div>
         </div>
