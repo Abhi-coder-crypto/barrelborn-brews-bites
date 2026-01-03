@@ -85,15 +85,15 @@ const Hero = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground mb-4 tracking-tight leading-tight">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground mb-4 tracking-tight leading-tight">
           <ShatterText text="BARRELBORN" />
         </h1>
         
-        <p className="text-sm sm:text-base md:text-lg tracking-[0.5em] text-primary font-bold mb-8 animate-fade-up animation-delay-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+        <p className="text-xs sm:text-sm md:text-base tracking-[0.5em] text-primary font-bold mb-6 animate-fade-up animation-delay-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
           DINE & DRAFT
         </p>
 
-        <p className="max-w-md mx-auto text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-8 animate-fade-up animation-delay-400 px-4">
+        <p className="max-w-md mx-auto text-muted-foreground text-xs sm:text-sm md:text-base leading-relaxed mb-8 animate-fade-up animation-delay-400 px-4">
           Where the city chills. Crafted beers, artisan cocktails, and culinary excellence in the heart of Thane
         </p>
 

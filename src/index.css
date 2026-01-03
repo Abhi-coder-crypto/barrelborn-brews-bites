@@ -143,19 +143,19 @@
   }
 
   .section-padding {
-    @apply py-24 md:py-32 lg:py-40;
+    @apply py-16 md:py-24 lg:py-32;
   }
 
   .section-header {
-    @apply text-center mb-16 md:mb-20;
+    @apply text-center mb-10 md:mb-16;
   }
 
   .section-label {
-    @apply text-primary text-sm font-medium tracking-[0.35em] uppercase inline-block;
+    @apply text-primary text-xs md:text-sm font-medium tracking-[0.35em] uppercase inline-block;
   }
 
   .section-title {
-    @apply font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground mt-5 mb-6 leading-[1.1];
+    @apply font-display text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground mt-4 mb-5 leading-[1.1];
   }
 
   .section-divider {
