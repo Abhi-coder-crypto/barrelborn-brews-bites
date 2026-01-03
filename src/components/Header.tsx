@@ -40,14 +40,14 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-14 md:h-16">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Magnetic strength={0.3}>
             <button 
               onClick={() => handleNavClick("#home")}
               className="flex items-center group relative z-10"
             >
-              <div className="relative flex items-center justify-center transition-all duration-300 w-24 h-24 md:w-32 md:h-32 -my-4 md:-my-6">
+              <div className="relative flex items-center justify-center transition-all duration-300 w-24 h-24 md:w-32 md:h-32 -my-2 md:-my-3">
                 <img 
                   src="/src/assets/logo.png" 
                   alt="BarrelBorn Logo" 
