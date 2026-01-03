@@ -45,13 +45,13 @@ const Header = () => {
             onClick={() => handleNavClick("#home")}
             className="flex items-center gap-3 group"
           >
-            <div className={`relative flex items-center justify-center overflow-hidden transition-all duration-300 ${
-              isScrolled ? "w-10 h-10" : "w-14 h-14"
+            <div className={`relative flex items-center justify-center rounded-full border-2 border-primary/30 overflow-hidden transition-all duration-300 group-hover:border-primary ${
+              isScrolled ? "w-12 h-12" : "w-16 h-16"
             }`}>
               <img 
                 src="/src/assets/logo.png" 
                 alt="BarrelBorn Logo" 
-                className="w-full h-full object-contain"
+                className="w-[85%] h-[85%] object-contain"
               />
             </div>
             <div className="hidden sm:block">

@@ -26,11 +26,11 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
+              <div className="w-16 h-16 rounded-full border-2 border-primary/30 flex items-center justify-center overflow-hidden">
                 <img 
                   src="/src/assets/logo.png" 
                   alt="BarrelBorn Logo" 
-                  className="w-full h-full object-contain"
+                  className="w-[85%] h-[85%] object-contain"
                 />
               </div>
               <div>
