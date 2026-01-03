@@ -26,10 +26,10 @@ const Testimonials = () => {
     <section id="testimonials" className="py-12 bg-charcoal relative overflow-hidden reveal">
       {/* Decorative elements */}
       <div className="absolute top-10 right-10 lg:top-20 lg:right-20 text-primary/4">
-        <Quote className="w-48 h-48 lg:w-72 lg:h-72" />
+        <Quote className="w-24 h-24 lg:w-32 lg:h-32" />
       </div>
       <div className="absolute bottom-10 left-10 lg:bottom-20 lg:left-20 text-primary/4 rotate-180">
-        <Quote className="w-36 h-36 lg:w-52 lg:h-52" />
+        <Quote className="w-16 h-16 lg:w-24 lg:h-24" />
       </div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial opacity-30" />
 
