@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -23,7 +24,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-6 bg-charcoal relative overflow-hidden reveal">
+    <section id="testimonials" className="py-24 bg-charcoal relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-4 right-4 lg:top-8 lg:right-8 text-primary/4">
         <Quote className="w-24 h-24 lg:w-32 lg:h-32" />
@@ -35,51 +36,58 @@ const Testimonials = () => {
 
       <div className="container relative z-10 px-4 sm:px-6">
         {/* Section Header */}
-        <div className="section-header mb-4">
+        <div className="section-header mb-12">
           <span className="section-label">Testimonials</span>
-          <h2 className="section-title mt-2 mb-2">What Our Guests Say</h2>
+          <h2 className="section-title mt-4 mb-4">What Our Guests Say</h2>
           <div className="section-divider" />
         </div>
 
-        <div className="w-full overflow-hidden relative py-4">
-          <div className="flex animate-marquee-horizontal gap-6 w-max">
+        <div className="w-full overflow-hidden relative py-12">
+          <div className="flex animate-marquee-horizontal gap-8 w-max px-4">
             {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
-              <div
+              <motion.div
                 key={`${testimonial.name}-${index}`}
-                className="w-[350px] sm:w-[450px] p-8 bg-card/70 rounded-2xl border border-border/40 backdrop-blur-sm flex-shrink-0"
+                whileHover={{ 
+                  scale: 1.05, 
+                  z: 50,
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+                  borderColor: "hsl(var(--primary) / 0.4)"
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="w-[350px] sm:w-[450px] p-8 bg-card/70 rounded-2xl border border-border/40 backdrop-blur-md flex-shrink-0 cursor-pointer relative z-10 hover:z-50"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground leading-relaxed mb-6 italic min-h-[80px]">
+                <p className="text-foreground/90 leading-relaxed mb-6 italic min-h-[100px] text-lg">
                   "{testimonial.content}"
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary font-display">{testimonial.name.charAt(0)}</span>
+                <div className="flex items-center gap-4 border-t border-border/20 pt-6">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
+                    <span className="text-primary font-display text-lg">{testimonial.name.charAt(0)}</span>
                   </div>
                   <div>
-                    <h4 className="font-medium text-foreground text-sm">{testimonial.name}</h4>
-                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                    <h4 className="font-semibold text-foreground text-base">{testimonial.name}</h4>
+                    <p className="text-sm text-primary/70">{testimonial.role}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* Google Rating CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12">
           <a
-            href="https://www.google.com/search?sca_esv=7dcbc37479457eb0&sxsrf=AE3TifOlTeAcP_gEowkoFv3R5BVqDq4fTQ:1767374245174&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E9moAMXsS0ppftIa0AAstM7PU3IPOsk0_n4z2GibB7zwuuqJ_Zbkf-8VublAkI9bQoriLtiFfWv2pIsrhadjPCDP3j-pqozS1djY7fZfyFv3bCDwwiVEvOcINNV4GJ6DdbUIl5o%3D&q=Barrelborn+%7C+Dine+%26+Draft+%7C+Thane+Reviews&sa=X&ved=2ahUKEwjWkcaQru2RAxXekq8BHaEaJlYQ0bkNegQIKhAE&biw=1280&bih=632&dpr=1.5"
+            href="https://www.google.com/search?q=Barrelborn+Thane+Reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-4 px-7 py-3.5 bg-primary/10 hover:bg-primary/20 rounded-full transition-all duration-300"
+            className="group inline-flex items-center gap-4 px-8 py-4 bg-primary/10 hover:bg-primary/20 rounded-full transition-all duration-300 border border-primary/20"
           >
             <Star className="w-5 h-5 fill-primary text-primary" />
-            <span className="text-primary font-medium">Rate us on Google</span>
+            <span className="text-primary font-semibold tracking-wide">Rate us on Google</span>
           </a>
         </div>
       </div>
